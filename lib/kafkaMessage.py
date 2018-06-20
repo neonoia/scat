@@ -6,10 +6,17 @@ class kafkaMessage(object):
         '''Creates a keyword named "Get Topic Messages"
         This keyword takes two arguments, the topic and the port
         '''
-        messages = []
-        consumer = KafkaConsumer(topics,bootstrap_servers=server,auto_offset_reset='earliest')
+        consumer = KafkaConsumer(topics,bootstrap_servers=server,consumer_timeout_ms=10000)
         # consumer.assign()
-        for msg in consumer:
-            messages.append(msg)
+        for message in consumer:
+            print ("%s key=%s value=%s" % (message.topic,message.key,
+                                                message.value))
+                                                
+        consumer.close()
 
-        return messages
+if __name__ == "__main__":
+    n = kafkaMessage()
+    test = 'StorageCreateRequested'
+    lc = "10.99.143.96:9092"
+    print("test")
+    n.get_topic_messages(test,lc)
