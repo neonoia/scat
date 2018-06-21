@@ -19,14 +19,14 @@ Open Browser to Upload File
 
 Choose File To Be Uploaded
     Page Should Contain Button      xpath://*[@id="file"]
-    Choose File                     xpath://*[@id="file"]           /home/budiman/Documents/automation/SKU.xlsx
+    Choose File                     xpath://*[@id="file"]           /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
 
 Upload File
     Page Should Contain Button      xpath://*[@id="myButton"]
     # Click Element                   xpath://*[@id="myButton"]
 
 Match SKU File With Kafka
-    ${sku}                          Read SKU File                   /home/budiman/Documents/automation/SKU.xlsx
+    ${sku}                          Read SKU File                   /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
     Set Global Variable             ${sku}
     ${messages}                     Get Topic Messages              SkuCreateRequested              10.99.143.96:9092
     ${result}                       Match File With Kafka           ${sku}                          ${messages}
