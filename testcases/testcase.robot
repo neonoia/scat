@@ -5,9 +5,11 @@ Library     ../lib/kafkaMessage.py
 Library     ../lib/couchbaseCheck.py
 
 *** Test Cases ***
-QA Test Automation
+Initialize Browser To Upload
     Open Browser To Upload File
-    Match Uploaded File
+Check And Match SKU
+    Match SKU File With Kafka
+    Match SKU File With Couchbase
 
 *** Keywords ***
 Open Browser to Upload File
@@ -23,12 +25,15 @@ Upload File
     Page Should Contain Button      xpath://*[@id="myButton"]
     # Click Element                   xpath://*[@id="myButton"]
 
-Match Uploaded File
-    ${sku}=                         Read SKU File                   /home/budiman/Documents/automation/SKU.xlsx
-    ${messages}=                    Get Topic Messages              SkuCreateRequested              10.99.143.96:9092
+Match SKU File With Kafka
+    ${sku}                          Read SKU File                   /home/budiman/Documents/automation/SKU.xlsx
+    Set Global Variable             ${sku}
+    ${messages}                     Get Topic Messages              SkuCreateRequested              10.99.143.96:9092
     ${result}                       Match File With Kafka           ${sku}                          ${messages}
     Run Keyword If                  '${result}' == 'False'          Log                             SKU Does not exist in Kafka                     ERROR
     ...                             ELSE    Log                     Passed
+
+Match SKU File With Couchbase
     ${cb}=                          Check In Couchbase              ${sku}
     Run Keyword If                  '${cb}' == 'False'              Log                             SKU Does not exist in Couchbase Server          ERROR
     ...                             ELSE    Log                     Passed
