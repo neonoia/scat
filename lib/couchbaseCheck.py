@@ -8,6 +8,10 @@ def write(s):
 
 def check_in_couchbase(sku, key_name, check):
     '''
+    Creates a keyword named "Check In Couchbase"
+    This keyword takes three arguments, sku as primary key, key identifier, 
+    and value to be checked inside couchbase server, Returns boolean value 
+    whether the specified N1QL query found result or not.
     '''
     cluster = Cluster('couchbase://10.99.143.96:8091')
     authenticator = PasswordAuthenticator('Administrator', 'password')

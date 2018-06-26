@@ -6,7 +6,11 @@ class kafkaMessage(object):
 
     def get_topic_messages(self, topics, server):
         '''
+        Creates a keyword named "Get Topic Messages"
+        This keyword takes two argument, the topic and the kafka server
+        and returns a list messages inside the topic.
         '''
+
         settings = {
             'bootstrap.servers': server,
             'group.id': 'item-service',
@@ -28,7 +32,6 @@ class kafkaMessage(object):
                 elif not msg.error():
                     temp = msg.value()
                     messages.append(temp)
-
                 elif msg.error().code() == KafkaError._PARTITION_EOF:
                     break
                 else:
@@ -40,22 +43,12 @@ class kafkaMessage(object):
 
         return messages
 
-    def match_file_with_kafka(self, sku, kafka):
-        '''
-        '''
-        for sku_id in sku:
-
-            found = False
-            for msg in kafka:
-                if sku_id in msg:
-                    found = True
-            if not found:
-                return False
-        
-        return True
-
     def match_item_details(self, item, kafka):
         '''
+        Creates a keyword named "Match Item Details"
+        Search the item details in kafka messages list. 
+        Returns boolean value whether the details are 
+        present in kafka messages or not.
         '''
         if type(item) is int:
             return True

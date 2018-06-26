@@ -14,7 +14,6 @@ class fileParser(object):
             data = pandas.read_csv(filename)
         else:
             data = pandas.read_excel(filename)
-        
         return data
 
     def get_number_of_columns(self, filename):
@@ -36,12 +35,18 @@ class fileParser(object):
 
     def get_number_of_rows(self, filename):
         '''
+        Creates a keyword named "Get Number of Rows"
+        This keyword takes one argument as a path to the file
+        and returns number of rows present in the file.
         '''
         data = fileParser().read_file(filename)
         return len(data.index)
 
     def get_list_of_items(self, filename):
         '''
+        Creates a keyword named "Get List of Items"
+        This keyword takes one argument as a path to the file
+        and returns list of items per row.
         '''
         data = fileParser().read_file(filename)
         return(data.values.tolist())

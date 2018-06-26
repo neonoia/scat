@@ -11,5 +11,5 @@ This automation supply chain tool is built with robot framework and python. Plea
 
 ## How to Execute
 
-* Before executing, change the location of the desired file to be uploaded and checked inside /testcases/tescase.robot on line 22 and 29 according to its local location
+* Before executing, change the location of the desired file to be uploaded and checked in its declaration right at line 9.
 * Run this command ```chmod +x run.sh``` and finally ```./run.sh```

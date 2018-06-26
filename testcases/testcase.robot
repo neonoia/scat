@@ -1,5 +1,6 @@
 *** Settings ***
 Library     Selenium2Library
+Library     DateTime
 Library     ../lib/fileParser.py
 Library     ../lib/kafkaMessage.py
 Library     ../lib/couchbaseCheck.py
@@ -10,10 +11,10 @@ ${filename}        /home/budiman/Documents/automation-supply-chain/files/SKU.xls
 *** Test Cases ***
 Initialize Browser To Upload
     Open Browser To Upload File
+Check Status
+    Check Process Status
 Check And Match Columns
     Match Columns
-#Check Status
-#    Check Process Status
 
 *** Keywords ***
 Open Browser to Upload File
@@ -27,7 +28,18 @@ Choose File To Be Uploaded
 
 Upload File
     Page Should Contain Button      xpath://*[@id="myButton"]
-    # Click Element                   xpath://*[@id="myButton"]
+    Click Element                   xpath://*[@id="myButton"]
+
+Check Process Status
+    ${date}=                        Get Current Date                exclude_millis=yes
+    Set Global Variable             ${date}
+    Wait Until File Processed
+
+Wait Until File Processed
+    Sleep                           5s      # Set to sleep, because to detect display we need to write a script
+    #Wait Until Element Contains     xpath://*[@id="upload-success"]/div[2]/div[1]/div/span/b            Upload File SKU Sukses!
+    #Click Element                   xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a
+    #Page Should Contain             ${date}
 
 Match Columns
     ${no_of_columns}                Get Number of Columns           ${filename}
@@ -65,5 +77,3 @@ Handle Item Couchbase
     \   ${status}=                  Check In Couchbase                  ${items[${row}][0]}             ${columns[${col}]}          ${items[${row}][${col}]}
     \   Run Keyword If              '${status}' == 'False'              Log                             ${items[${row}][0]} does not exist in Couchbase ${items[${row}][0]} ${columns[${col}]} ${items[${row}][${col}]}     ERROR
     \   ...                         ELSE                                Log                             ${items[${row}][0]} : ${items[${row}][${col}]} exists in Couchbase \n
-
-#Check Process Status
