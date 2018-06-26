@@ -1,27 +1,62 @@
 from couchbase.cluster import Cluster
 from couchbase.cluster import PasswordAuthenticator
 from couchbase.n1ql import N1QLQuery
+from robot.api import logger
 
-class couchbaseCheck(object):
+def write(s):
+    logger.console(s)
 
-    def check_in_couchbase(self, sku):
+def check_in_couchbase(sku, key_name, check):
+    '''
+    '''
+    cluster = Cluster('couchbase://10.99.143.96:8091')
+    authenticator = PasswordAuthenticator('Administrator', 'password')
+    cluster.authenticate(authenticator)
+    cb = cluster.open_bucket('item')
 
-        cluster = Cluster('couchbase://10.99.143.96:8091')
-        authenticator = PasswordAuthenticator('Administrator', 'password')
-        cluster.authenticate(authenticator)
-        cb = cluster.open_bucket('item')
+    results = []
 
-        results = []
+    key_name = str(key_name)
+    key_name = key_name.lower()
 
-        for sku_id in sku:
-            query = N1QLQuery("SELECT code, name FROM `item` WHERE code=$codes", codes=str(sku_id))
-            
-            idx = 0
-            for row in cb.n1ql_query(query):
-                results.append(row)
-                idx += 1
+    if (sku == check):
+        
+        q = "SELECT * FROM `item` WHERE code='" + str(sku) + "'"
 
-            if idx == 0:
-                return False
+    elif ("package" in key_name) or ("inner" in key_name) or ("outer" in key_name):
+        
+        # Example querying nested object:
+        # SELECT * FROM `item` WHERE code='QRTS00001' and size.`inner`.length=300
 
+        key_parse = key_name.split(" ")
+
+        if "category" in key_parse[1]:
+            key_parse[1] = "size_" + key_parse[1]
+            check = "'" + str(check) + "'"
+
+        if ("inner" in key_name) or ("outer" in key_name):
+            q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND size.`" + str(key_parse[0]) + "`." + str(key_parse[1]) + "=" + str(check)
+        else:
+            key_parse[0] += "s"
+            q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND size.`" + str(key_parse[0]) + "`." + str(key_parse[1]) + "=" + str(check)
+        
+    else:
+
+        # Handle different column names
+        if ("full/part" in key_name):
+            key_name = "type"
+            check = check.lower()
+        if ("handling list" in key_name):
+            key_name = "handling_list"
+
+        # Query with its primary key
+        q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND " + str(key_name) + "='" + str(check) + "'"
+
+    query = N1QLQuery(q)
+    for row in cb.n1ql_query(query):
+        results.append(row)
+
+    if (len(results) == 0):
+        return False
+    else:
         return True

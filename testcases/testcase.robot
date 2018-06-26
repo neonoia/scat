@@ -4,13 +4,16 @@ Library     ../lib/fileParser.py
 Library     ../lib/kafkaMessage.py
 Library     ../lib/couchbaseCheck.py
 
+*** Variables ***
+${filename}        /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
+
 *** Test Cases ***
 Initialize Browser To Upload
     Open Browser To Upload File
 Check And Match Columns
     Match Columns
-Check Status
-    Check Process Status
+#Check Status
+#    Check Process Status
 
 *** Keywords ***
 Open Browser to Upload File
@@ -20,34 +23,47 @@ Open Browser to Upload File
 
 Choose File To Be Uploaded
     Page Should Contain Button      xpath://*[@id="file"]
-    Choose File                     xpath://*[@id="file"]           /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
+    Choose File                     xpath://*[@id="file"]           ${filename}
 
 Upload File
     Page Should Contain Button      xpath://*[@id="myButton"]
     # Click Element                   xpath://*[@id="myButton"]
 
 Match Columns
-    ${no_of_columns}                Get Number of Columns
-    ${no_of_rows}                   Get Number of Rows
-    ${columns}                      Get Column Names
-    ${items}                        Get List of Items
+    ${no_of_columns}                Get Number of Columns           ${filename}
+    ${no_of_rows}                   Get Number of Rows              ${filename}
+    ${columns}                      Get Column Names                ${filename}
+    Log To Console                  ${columns}
+    ${items}                        Get List of Items               ${filename}
     Set Global Variable             ${no_of_columns}
     Set Global Variable             ${no_of_rows}
     Set Global Variable             ${columns}
-    Match Columns With Kafka
-    Match Columns With Couchbase
+    Set Global Variable             ${items}
+    Match Details With Kafka
+    Match Details With Couchbase
 
-Match Columns With Kafka
-    ${messages}                     Get Topic Messages              SkuCreateRequested              10.99.143.96:9092
-    :FOR    ${message}              IN      ${messages}
-    
-    ${result}                       Match File With Kafka           ${sku}                          ${messages}
-    Run Keyword If                  '${result}' == 'False'          Log                             SKU Does not exist in Kafka                     ERROR
-    ...                             ELSE    Log                     Passed
+Match Details With Kafka
+    ${messages}                     Get Topic Messages                  SkuCreateRequested              10.99.143.96:9092
+    Set Global Variable             ${messages}
+    :FOR    ${row}                  IN RANGE        ${no_of_rows}
+    \    Handle Item Kafka          ${row}
 
-Match Columns With Couchbase
-    ${cb}=                          Check In Couchbase              ${sku}
-    Run Keyword If                  '${cb}' == 'False'              Log                             SKU Does not exist in Couchbase Server          ERROR
-    ...                             ELSE    Log                     Passed
+Handle Item Kafka
+    [Arguments]    ${row}
+    :FOR    ${col}                  IN RANGE        ${no_of_columns}
+    \   ${status}                   Match Item Details                  ${items[${row}][${col}]}        ${messages}
+    \   Run Keyword If              '${status}' == 'False'              Log                             ${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}      ERROR
+    \   ...                         ELSE                                Log                             ${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka
 
-Check Process Status
+Match Details With Couchbase
+    :FOR    ${row}                  IN RANGE        ${no_of_rows}
+    \    Handle Item Couchbase      ${row}
+
+Handle Item Couchbase
+    [Arguments]    ${row}
+    :FOR    ${col}                  IN RANGE        ${no_of_columns}
+    \   ${status}=                  Check In Couchbase                  ${items[${row}][0]}             ${columns[${col}]}          ${items[${row}][${col}]}
+    \   Run Keyword If              '${status}' == 'False'              Log                             ${items[${row}][0]} does not exist in Couchbase ${items[${row}][0]} ${columns[${col}]} ${items[${row}][${col}]}     ERROR
+    \   ...                         ELSE                                Log                             ${items[${row}][0]} : ${items[${row}][${col}]} exists in Couchbase \n
+
+#Check Process Status

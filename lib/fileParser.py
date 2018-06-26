@@ -4,8 +4,9 @@ import pandas
 class fileParser(object):
 
     def read_file(self, filename):
-        '''Creates a keyword named "Read SKU File"
-        This keyword takes one argument as a path to the csv file.
+        '''
+        Creates a keyword named "Read SKU File"
+        This keyword takes one argument as a path to the file.
         and returns a list of rows containing product ids to be compared 
         with the data inside couchbase' bucket
         '''

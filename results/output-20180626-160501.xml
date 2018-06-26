@@ -1,0 +1,4173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180626 16:05:01.784" generator="Robot 3.0.4 (Python 2.7.12 on linux2)">
+<suite source="/home/budiman/Documents/automation-supply-chain/testcases/testcase.robot" id="s1" name="Testcase">
+<test id="s1-t1" name="Initialize Browser To Upload">
+<kw name="Open Browser to Upload File">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://10.99.143.80:8080/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20180626 16:05:02.040" level="INFO">Opening browser 'chrome' to base url 'http://10.99.143.80:8080/'.</msg>
+<status status="PASS" endtime="20180626 16:05:05.203" starttime="20180626 16:05:02.040"></status>
+</kw>
+<kw name="Choose File To Be Uploaded">
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.227" level="INFO">Current page contains input 'xpath://*[@id="file"]'.</msg>
+<status status="PASS" endtime="20180626 16:05:05.228" starttime="20180626 16:05:05.204"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+<arg>${filename}</arg>
+</arguments>
+<status status="PASS" endtime="20180626 16:05:05.256" starttime="20180626 16:05:05.228"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.257" starttime="20180626 16:05:05.204"></status>
+</kw>
+<kw name="Upload File">
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.283" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;&lt;head&gt;
+    
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+
+    &lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /&gt;
+    &lt;meta name="viewport" /&gt;
+
+    
+    &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" /&gt;
+    &lt;link href="/assets/css/template.css?r=0.1.0" rel="stylesheet" /&gt;
+
+    
+    &lt;link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" /&gt;
+
+    &lt;title&gt;Index Page - Supply Chain Web&lt;/title&gt;
+    
+    
+    &lt;script src="http://code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+&lt;div id="upload-loader" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content" style="width: 200px;"&gt;
+            &lt;div class="progress"&gt;
+                &lt;div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    
+    &lt;nav class="navbar navbar-expand-lg navbar-dark navigation-bar"&gt;
+        &lt;a class="navbar-brand navbar-title" href="#"&gt;RUMA Logistics&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarText"&gt;
+            &lt;ul class="navbar-nav mr-auto"&gt;
+                
+            &lt;/ul&gt;
+            &lt;span class="navbar-user"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-sm-2 sidebar"&gt;Tejo&lt;/div&gt;
+                    &lt;div class="col-sm-2 navbar-title"&gt;&lt;img src="../../assets/img/caret-down.png" /&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="container-fluid content"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-3"&gt;
+                &lt;div class="container-fluid sidebar"&gt;
+                    &lt;ul class="navbar-nav mr-auto"&gt;
+                        &lt;li class="nav-item sidebar-title"&gt;
+                            &lt;span class="nav-link"&gt;&lt;b&gt;SKU&lt;/b&gt;&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link active-link" href="upload-file"&gt;Upload file SKU&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="history"&gt;History upload&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-title-center"&gt;
+                            &lt;a class="nav-link"&gt;&lt;b&gt;INVENTORY&lt;/b&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="#"&gt;Lorem ipsum&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-7"&gt;
+                &lt;div class="container-fluid"&gt;
+                    &lt;div id="upload-view"&gt;
+    &lt;div class="row sc-ads pt-2" id="upload-view"&gt;
+        &lt;div class="col-sm-5"&gt;
+           &lt;div class="container download-ads"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="text-center"&gt;Pastikan &lt;b&gt;file SKU yang akan diupload sesuai template SKU&lt;/b&gt; yang diberikan. &lt;br /&gt;Belum ada SKU template?&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;div class="container-fluid"&gt;
+                &lt;a href="/assets/TemplateUploadSKU.xlsx" class="download-ads" download=""&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-sm-2"&gt;
+                            &lt;span class="sc-download"&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="col-sm-10"&gt;
+                            &lt;p&gt;&lt;b class="text-green"&gt;Download&lt;/b&gt;&lt;br /&gt; &lt;b class="text-black"&gt;SKU Registration Template.csv&lt;/b&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+
+        &lt;div class="col-sm-9"&gt;
+            &lt;form id="upload-form" class="form-inline" enctype="multipart/form-data"&gt;
+                &lt;div class="container mt-3 mb-3"&gt;
+                    &lt;b&gt;&lt;label class="text-center sc-title"&gt;UPLOAD FILE SKU&lt;/label&gt;&lt;/b&gt;
+                &lt;/div&gt;
+
+            &lt;div class="custom-file"&gt;
+                &lt;input accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file" type="file" class="custom-file-input" id="file" required="" /&gt;
+                &lt;label id="custom-file-label" class="custom-file-label" for="file"&gt;SKU.xlsx&lt;/label&gt;
+
+            &lt;/div&gt;
+
+                &lt;button id="myButton" class="btn btn-primary btn-block mt-3" type="submit" name="myButton"&gt;UPLOAD&lt;/button&gt;
+
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-success" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title"&gt;&lt;b&gt;Upload File SKU Sukses!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="container content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;File Anda sedang diproses.&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;Cek history upload&lt;/b&gt; untuk memeriksa status file Anda.&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-fail" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist-red"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title-red"&gt;&lt;b&gt;Upload File SKU Gagal!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="upload-fail-content" class="container"&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error-logic" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;File Anda tidak bisa diproses. &lt;b&gt;Seluruh SKU belum terupload.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Perbaiki file SKU dan &lt;b&gt;upload ulang seluruh isi file.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row content-content"&gt;
+            &lt;div id="table-content" class="col"&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Terdapat kesalahan sistem, &lt;b&gt;mohon mencoba kembali.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Jika masih gagal, &lt;b&gt;mohon hubungi Tim IT.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+    function getFilename() {
+        var fieldVal = document.getElementById("file").value;
+        var label = document.getElementById("custom-file-label");
+        
+        fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+
+        if (fieldVal !== undefined || fieldVal !== "") {
+            label.innerHTML = fieldVal;
+        }
+    }
+&lt;/script&gt;
+&lt;script type="text/javascript" src="/assets/js/upload.js"&gt;&lt;/script&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-2"&gt;
+                &lt;div class="container-fluid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20180626 16:05:05.296" level="INFO">Current page contains button 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180626 16:05:05.296" starttime="20180626 16:05:05.259"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.296" starttime="20180626 16:05:05.258"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.296" starttime="20180626 16:05:02.040"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.296" critical="yes" starttime="20180626 16:05:02.039"></status>
+</test>
+<test id="s1-t2" name="Check And Match Columns">
+<kw name="Match Columns">
+<kw name="Get Number Of Columns" library="fileParser">
+<doc>Creates a keyword named "Get Numbers of Columns"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${no_of_columns}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.314" level="INFO">${no_of_columns} = 21</msg>
+<status status="PASS" endtime="20180626 16:05:05.314" starttime="20180626 16:05:05.298"></status>
+</kw>
+<kw name="Get Number Of Rows" library="fileParser">
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${no_of_rows}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.322" level="INFO">${no_of_rows} = 5</msg>
+<status status="PASS" endtime="20180626 16:05:05.322" starttime="20180626 16:05:05.315"></status>
+</kw>
+<kw name="Get Column Names" library="fileParser">
+<doc>Creates a keyword named "Get Column Names"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${columns}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.329" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180626 16:05:05.330" starttime="20180626 16:05:05.322"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${columns}</arg>
+</arguments>
+<status status="PASS" endtime="20180626 16:05:05.330" starttime="20180626 16:05:05.330"></status>
+</kw>
+<kw name="Get List Of Items" library="fileParser">
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.337" level="INFO">${items} = [[u'QRTS00001', u'Alcor Deep Ebi Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190...</msg>
+<status status="PASS" endtime="20180626 16:05:05.337" starttime="20180626 16:05:05.330"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${no_of_columns}</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.338" level="INFO">${no_of_columns} = 21</msg>
+<status status="PASS" endtime="20180626 16:05:05.338" starttime="20180626 16:05:05.337"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${no_of_rows}</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.339" level="INFO">${no_of_rows} = 5</msg>
+<status status="PASS" endtime="20180626 16:05:05.339" starttime="20180626 16:05:05.338"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${columns}</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.339" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180626 16:05:05.339" starttime="20180626 16:05:05.339"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${items}</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.340" level="INFO">${items} = [[u'QRTS00001', u'Alcor Deep Ebi Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190...</msg>
+<status status="PASS" endtime="20180626 16:05:05.340" starttime="20180626 16:05:05.339"></status>
+</kw>
+<kw name="Match Details With Kafka">
+<kw name="Get Topic Messages" library="kafkaMessage">
+<arguments>
+<arg>SkuCreateRequested</arg>
+<arg>10.99.143.96:9092</arg>
+</arguments>
+<assign>
+<var>${messages}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.789" level="INFO">${messages} = ['\n\nABCDE12345\x12\x12SkuCreateRequested\x19\x89\xac\x82*so\x05\x00"\x0bTest Script*\xb6\x04\n\rID,1529915308\x12\x0fCODE,1529915308\x1a\x0fNAME,1529915308"\x0fNAME,1529915308*\x04pack2\x04pack:PLor...</msg>
+<status status="PASS" endtime="20180626 16:05:05.789" starttime="20180626 16:05:05.340"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${messages}</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.796" level="INFO">${messages} = ['\n\nABCDE12345\x12\x12SkuCreateRequested\x19\x89\xac\x82*so\x05\x00"\x0bTest Script*\xb6\x04\n\rID,1529915308\x12\x0fCODE,1529915308\x1a\x0fNAME,1529915308"\x0fNAME,1529915308*\x04pack2\x04pack:PLor...</msg>
+<status status="PASS" endtime="20180626 16:05:05.796" starttime="20180626 16:05:05.790"></status>
+</kw>
+<kw type="for" name="${row} IN RANGE [ ${no_of_rows} ]">
+<kw type="foritem" name="${row} = 0">
+<kw name="Handle Item Kafka">
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<kw type="for" name="${col} IN RANGE [ ${no_of_columns} ]">
+<kw type="foritem" name="${col} = 0">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.797" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.797" starttime="20180626 16:05:05.797"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.798" level="INFO">QRTS00001 : QRTS00001 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.798" starttime="20180626 16:05:05.798"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.798" starttime="20180626 16:05:05.798"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.798" starttime="20180626 16:05:05.797"></status>
+</kw>
+<kw type="foritem" name="${col} = 1">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.799" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.799" starttime="20180626 16:05:05.799"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.800" level="INFO">QRTS00001 : Alcor Deep Ebi Fry Wok exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.800" starttime="20180626 16:05:05.800"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.801" starttime="20180626 16:05:05.799"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.801" starttime="20180626 16:05:05.799"></status>
+</kw>
+<kw type="foritem" name="${col} = 2">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.801" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.801" starttime="20180626 16:05:05.801"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.802" level="INFO">QRTS00001 : Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.802" starttime="20180626 16:05:05.802"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.802" starttime="20180626 16:05:05.801"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.802" starttime="20180626 16:05:05.801"></status>
+</kw>
+<kw type="foritem" name="${col} = 3">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.803" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.803" starttime="20180626 16:05:05.803"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.804" level="INFO">QRTS00001 : pcs exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.804" starttime="20180626 16:05:05.803"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.804" starttime="20180626 16:05:05.803"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.804" starttime="20180626 16:05:05.802"></status>
+</kw>
+<kw type="foritem" name="${col} = 4">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.805" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.805" starttime="20180626 16:05:05.804"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.806" level="INFO">QRTS00001 : Full exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.806" starttime="20180626 16:05:05.805"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.806" starttime="20180626 16:05:05.805"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.806" starttime="20180626 16:05:05.804"></status>
+</kw>
+<kw type="foritem" name="${col} = 5">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.806" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.806" starttime="20180626 16:05:05.806"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.807" level="INFO">QRTS00001 : Tidak boleh dibanting exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.807" starttime="20180626 16:05:05.807"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.808" starttime="20180626 16:05:05.807"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.808" starttime="20180626 16:05:05.806"></status>
+</kw>
+<kw type="foritem" name="${col} = 6">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.808" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.808" starttime="20180626 16:05:05.808"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.809" level="INFO">QRTS00001 : 300 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.809" starttime="20180626 16:05:05.809"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.809" starttime="20180626 16:05:05.808"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.809" starttime="20180626 16:05:05.808"></status>
+</kw>
+<kw type="foritem" name="${col} = 7">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.810" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.810" starttime="20180626 16:05:05.809"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.811" level="INFO">QRTS00001 : 170 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.811" starttime="20180626 16:05:05.810"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.811" starttime="20180626 16:05:05.810"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.811" starttime="20180626 16:05:05.809"></status>
+</kw>
+<kw type="foritem" name="${col} = 8">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.812" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.812" starttime="20180626 16:05:05.811"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.813" level="INFO">QRTS00001 : 120 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.813" starttime="20180626 16:05:05.812"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.813" starttime="20180626 16:05:05.812"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.813" starttime="20180626 16:05:05.811"></status>
+</kw>
+<kw type="foritem" name="${col} = 9">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.813" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.813" starttime="20180626 16:05:05.813"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.814" level="INFO">QRTS00001 : 400 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.814" starttime="20180626 16:05:05.814"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.814" starttime="20180626 16:05:05.814"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.814" starttime="20180626 16:05:05.813"></status>
+</kw>
+<kw type="foritem" name="${col} = 10">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.815" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.815" starttime="20180626 16:05:05.815"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.816" level="INFO">QRTS00001 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.816" starttime="20180626 16:05:05.815"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.816" starttime="20180626 16:05:05.815"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.816" starttime="20180626 16:05:05.814"></status>
+</kw>
+<kw type="foritem" name="${col} = 11">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.817" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.817" starttime="20180626 16:05:05.816"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.817" level="INFO">QRTS00001 : 300 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.817" starttime="20180626 16:05:05.817"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.818" starttime="20180626 16:05:05.817"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.818" starttime="20180626 16:05:05.816"></status>
+</kw>
+<kw type="foritem" name="${col} = 12">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.818" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.818" starttime="20180626 16:05:05.818"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.819" level="INFO">QRTS00001 : 170 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.819" starttime="20180626 16:05:05.819"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.819" starttime="20180626 16:05:05.818"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.819" starttime="20180626 16:05:05.818"></status>
+</kw>
+<kw type="foritem" name="${col} = 13">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.820" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.820" starttime="20180626 16:05:05.819"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.821" level="INFO">QRTS00001 : 120 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.821" starttime="20180626 16:05:05.820"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.821" starttime="20180626 16:05:05.820"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.821" starttime="20180626 16:05:05.819"></status>
+</kw>
+<kw type="foritem" name="${col} = 14">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.821" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.821" starttime="20180626 16:05:05.821"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.822" level="INFO">QRTS00001 : 400 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.822" starttime="20180626 16:05:05.822"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.822" starttime="20180626 16:05:05.821"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.822" starttime="20180626 16:05:05.821"></status>
+</kw>
+<kw type="foritem" name="${col} = 15">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.823" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.823" starttime="20180626 16:05:05.822"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.824" level="INFO">QRTS00001 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.824" starttime="20180626 16:05:05.823"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.824" starttime="20180626 16:05:05.823"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.824" starttime="20180626 16:05:05.822"></status>
+</kw>
+<kw type="foritem" name="${col} = 16">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.824" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.824" starttime="20180626 16:05:05.824"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.825" level="INFO">QRTS00001 : 320 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.825" starttime="20180626 16:05:05.825"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.825" starttime="20180626 16:05:05.824"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.825" starttime="20180626 16:05:05.824"></status>
+</kw>
+<kw type="foritem" name="${col} = 17">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.826" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.826" starttime="20180626 16:05:05.825"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.827" level="INFO">QRTS00001 : 190 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.827" starttime="20180626 16:05:05.826"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.827" starttime="20180626 16:05:05.826"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.827" starttime="20180626 16:05:05.825"></status>
+</kw>
+<kw type="foritem" name="${col} = 18">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.827" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.827" starttime="20180626 16:05:05.827"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.828" level="INFO">QRTS00001 : 130 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.828" starttime="20180626 16:05:05.828"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.828" starttime="20180626 16:05:05.827"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.828" starttime="20180626 16:05:05.827"></status>
+</kw>
+<kw type="foritem" name="${col} = 19">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.829" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.829" starttime="20180626 16:05:05.828"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.830" level="INFO">QRTS00001 : 410 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.830" starttime="20180626 16:05:05.829"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.830" starttime="20180626 16:05:05.829"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.830" starttime="20180626 16:05:05.828"></status>
+</kw>
+<kw type="foritem" name="${col} = 20">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.831" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.831" starttime="20180626 16:05:05.830"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.831" level="INFO">QRTS00001 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.831" starttime="20180626 16:05:05.831"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.831" starttime="20180626 16:05:05.831"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.831" starttime="20180626 16:05:05.830"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.831" starttime="20180626 16:05:05.797"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.832" starttime="20180626 16:05:05.796"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.832" starttime="20180626 16:05:05.796"></status>
+</kw>
+<kw type="foritem" name="${row} = 1">
+<kw name="Handle Item Kafka">
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<kw type="for" name="${col} IN RANGE [ ${no_of_columns} ]">
+<kw type="foritem" name="${col} = 0">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.832" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.833" starttime="20180626 16:05:05.832"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.833" level="INFO">QRTS00002 : QRTS00002 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.833" starttime="20180626 16:05:05.833"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.833" starttime="20180626 16:05:05.833"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.833" starttime="20180626 16:05:05.832"></status>
+</kw>
+<kw type="foritem" name="${col} = 1">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.834" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.834" starttime="20180626 16:05:05.834"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.835" level="INFO">QRTS00002 : Alcor Shallow Rebus Work exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.835" starttime="20180626 16:05:05.834"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.835" starttime="20180626 16:05:05.834"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.835" starttime="20180626 16:05:05.834"></status>
+</kw>
+<kw type="foritem" name="${col} = 2">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.835" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.835" starttime="20180626 16:05:05.835"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.836" level="INFO">QRTS00002 : Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.836" starttime="20180626 16:05:05.836"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.836" starttime="20180626 16:05:05.836"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.836" starttime="20180626 16:05:05.835"></status>
+</kw>
+<kw type="foritem" name="${col} = 3">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.837" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.837" starttime="20180626 16:05:05.836"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.838" level="INFO">QRTS00002 : pcs exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.838" starttime="20180626 16:05:05.837"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.838" starttime="20180626 16:05:05.837"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.838" starttime="20180626 16:05:05.836"></status>
+</kw>
+<kw type="foritem" name="${col} = 4">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.839" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.839" starttime="20180626 16:05:05.839"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.840" level="INFO">QRTS00002 : Full exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.840" starttime="20180626 16:05:05.839"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.840" starttime="20180626 16:05:05.839"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.840" starttime="20180626 16:05:05.838"></status>
+</kw>
+<kw type="foritem" name="${col} = 5">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.840" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.840" starttime="20180626 16:05:05.840"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.841" level="INFO">QRTS00002 : Tidak boleh dibanting exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.841" starttime="20180626 16:05:05.841"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.841" starttime="20180626 16:05:05.840"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.841" starttime="20180626 16:05:05.840"></status>
+</kw>
+<kw type="foritem" name="${col} = 6">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.842" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.842" starttime="20180626 16:05:05.841"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.843" level="INFO">QRTS00002 : 301 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.843" starttime="20180626 16:05:05.842"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.843" starttime="20180626 16:05:05.842"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.843" starttime="20180626 16:05:05.841"></status>
+</kw>
+<kw type="foritem" name="${col} = 7">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.843" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.843" starttime="20180626 16:05:05.843"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.844" level="INFO">QRTS00002 : 171 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.844" starttime="20180626 16:05:05.844"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.844" starttime="20180626 16:05:05.843"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.844" starttime="20180626 16:05:05.843"></status>
+</kw>
+<kw type="foritem" name="${col} = 8">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.845" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.845" starttime="20180626 16:05:05.844"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.845" level="INFO">QRTS00002 : 121 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.845" starttime="20180626 16:05:05.845"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.846" starttime="20180626 16:05:05.845"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.846" starttime="20180626 16:05:05.844"></status>
+</kw>
+<kw type="foritem" name="${col} = 9">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.846" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.846" starttime="20180626 16:05:05.846"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.847" level="INFO">QRTS00002 : 401 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.847" starttime="20180626 16:05:05.847"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.847" starttime="20180626 16:05:05.846"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.847" starttime="20180626 16:05:05.846"></status>
+</kw>
+<kw type="foritem" name="${col} = 10">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.848" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.848" starttime="20180626 16:05:05.848"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.849" level="INFO">QRTS00002 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.849" starttime="20180626 16:05:05.848"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.849" starttime="20180626 16:05:05.848"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.849" starttime="20180626 16:05:05.847"></status>
+</kw>
+<kw type="foritem" name="${col} = 11">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.849" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.849" starttime="20180626 16:05:05.849"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.851" level="INFO">QRTS00002 : 301 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.851" starttime="20180626 16:05:05.850"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.851" starttime="20180626 16:05:05.850"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.851" starttime="20180626 16:05:05.849"></status>
+</kw>
+<kw type="foritem" name="${col} = 12">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.852" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.852" starttime="20180626 16:05:05.851"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.852" level="INFO">QRTS00002 : 171 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.852" starttime="20180626 16:05:05.852"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.852" starttime="20180626 16:05:05.852"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.853" starttime="20180626 16:05:05.851"></status>
+</kw>
+<kw type="foritem" name="${col} = 13">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.853" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.853" starttime="20180626 16:05:05.853"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.854" level="INFO">QRTS00002 : 121 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.854" starttime="20180626 16:05:05.853"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.854" starttime="20180626 16:05:05.853"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.854" starttime="20180626 16:05:05.853"></status>
+</kw>
+<kw type="foritem" name="${col} = 14">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.854" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.854" starttime="20180626 16:05:05.854"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.855" level="INFO">QRTS00002 : 401 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.855" starttime="20180626 16:05:05.855"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.855" starttime="20180626 16:05:05.855"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.855" starttime="20180626 16:05:05.854"></status>
+</kw>
+<kw type="foritem" name="${col} = 15">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.856" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.856" starttime="20180626 16:05:05.856"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.857" level="INFO">QRTS00002 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.857" starttime="20180626 16:05:05.856"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.857" starttime="20180626 16:05:05.856"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.857" starttime="20180626 16:05:05.855"></status>
+</kw>
+<kw type="foritem" name="${col} = 16">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.858" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.858" starttime="20180626 16:05:05.858"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.859" level="INFO">QRTS00002 : 321 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.859" starttime="20180626 16:05:05.858"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.859" starttime="20180626 16:05:05.858"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.859" starttime="20180626 16:05:05.857"></status>
+</kw>
+<kw type="foritem" name="${col} = 17">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.859" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.859" starttime="20180626 16:05:05.859"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.860" level="INFO">QRTS00002 : 191 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.860" starttime="20180626 16:05:05.860"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.860" starttime="20180626 16:05:05.860"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.860" starttime="20180626 16:05:05.859"></status>
+</kw>
+<kw type="foritem" name="${col} = 18">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.861" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.861" starttime="20180626 16:05:05.860"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.862" level="INFO">QRTS00002 : 131 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.862" starttime="20180626 16:05:05.861"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.862" starttime="20180626 16:05:05.861"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.862" starttime="20180626 16:05:05.860"></status>
+</kw>
+<kw type="foritem" name="${col} = 19">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.862" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.862" starttime="20180626 16:05:05.862"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.863" level="INFO">QRTS00002 : 411 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.863" starttime="20180626 16:05:05.863"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.863" starttime="20180626 16:05:05.862"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.863" starttime="20180626 16:05:05.862"></status>
+</kw>
+<kw type="foritem" name="${col} = 20">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.864" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.864" starttime="20180626 16:05:05.864"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.865" level="INFO">QRTS00002 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.865" starttime="20180626 16:05:05.864"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.865" starttime="20180626 16:05:05.864"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.865" starttime="20180626 16:05:05.863"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.865" starttime="20180626 16:05:05.832"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.865" starttime="20180626 16:05:05.832"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.865" starttime="20180626 16:05:05.832"></status>
+</kw>
+<kw type="foritem" name="${row} = 2">
+<kw name="Handle Item Kafka">
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<kw type="for" name="${col} IN RANGE [ ${no_of_columns} ]">
+<kw type="foritem" name="${col} = 0">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.866" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.866" starttime="20180626 16:05:05.866"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.867" level="INFO">QRTS00003 : QRTS00003 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.867" starttime="20180626 16:05:05.867"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.867" starttime="20180626 16:05:05.867"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.867" starttime="20180626 16:05:05.866"></status>
+</kw>
+<kw type="foritem" name="${col} = 1">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.868" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.868" starttime="20180626 16:05:05.868"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.869" level="INFO">QRTS00003 : Alcor Deep BEEF Fry Wok exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.869" starttime="20180626 16:05:05.868"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.869" starttime="20180626 16:05:05.868"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.869" starttime="20180626 16:05:05.867"></status>
+</kw>
+<kw type="foritem" name="${col} = 2">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.869" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.869" starttime="20180626 16:05:05.869"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.870" level="INFO">QRTS00003 : Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.870" starttime="20180626 16:05:05.870"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.870" starttime="20180626 16:05:05.869"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.870" starttime="20180626 16:05:05.869"></status>
+</kw>
+<kw type="foritem" name="${col} = 3">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.871" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.871" starttime="20180626 16:05:05.870"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.872" level="INFO">QRTS00003 : pcs exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.872" starttime="20180626 16:05:05.871"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.872" starttime="20180626 16:05:05.871"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.872" starttime="20180626 16:05:05.870"></status>
+</kw>
+<kw type="foritem" name="${col} = 4">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.872" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.872" starttime="20180626 16:05:05.872"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.873" level="INFO">QRTS00003 : Full exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.873" starttime="20180626 16:05:05.873"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.873" starttime="20180626 16:05:05.872"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.873" starttime="20180626 16:05:05.872"></status>
+</kw>
+<kw type="foritem" name="${col} = 5">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.874" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.874" starttime="20180626 16:05:05.873"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.875" level="INFO">QRTS00003 : Tidak boleh dibanting exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.875" starttime="20180626 16:05:05.874"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.875" starttime="20180626 16:05:05.874"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.875" starttime="20180626 16:05:05.873"></status>
+</kw>
+<kw type="foritem" name="${col} = 6">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.876" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.876" starttime="20180626 16:05:05.875"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.877" level="INFO">QRTS00003 : 302 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.877" starttime="20180626 16:05:05.876"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.877" starttime="20180626 16:05:05.876"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.877" starttime="20180626 16:05:05.875"></status>
+</kw>
+<kw type="foritem" name="${col} = 7">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.877" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.877" starttime="20180626 16:05:05.877"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.878" level="INFO">QRTS00003 : 172 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.878" starttime="20180626 16:05:05.878"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.878" starttime="20180626 16:05:05.877"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.878" starttime="20180626 16:05:05.877"></status>
+</kw>
+<kw type="foritem" name="${col} = 8">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.879" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.879" starttime="20180626 16:05:05.878"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.879" level="INFO">QRTS00003 : 122 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.880" starttime="20180626 16:05:05.879"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.880" starttime="20180626 16:05:05.879"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.880" starttime="20180626 16:05:05.878"></status>
+</kw>
+<kw type="foritem" name="${col} = 9">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.880" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.880" starttime="20180626 16:05:05.880"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.881" level="INFO">QRTS00003 : 402 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.881" starttime="20180626 16:05:05.880"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.881" starttime="20180626 16:05:05.880"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.881" starttime="20180626 16:05:05.880"></status>
+</kw>
+<kw type="foritem" name="${col} = 10">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.882" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.882" starttime="20180626 16:05:05.881"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.882" level="INFO">QRTS00003 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.882" starttime="20180626 16:05:05.882"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.882" starttime="20180626 16:05:05.882"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.882" starttime="20180626 16:05:05.881"></status>
+</kw>
+<kw type="foritem" name="${col} = 11">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.883" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.883" starttime="20180626 16:05:05.883"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.884" level="INFO">QRTS00003 : 302 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.884" starttime="20180626 16:05:05.884"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.884" starttime="20180626 16:05:05.883"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.884" starttime="20180626 16:05:05.883"></status>
+</kw>
+<kw type="foritem" name="${col} = 12">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.885" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.885" starttime="20180626 16:05:05.884"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.886" level="INFO">QRTS00003 : 172 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.886" starttime="20180626 16:05:05.885"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.886" starttime="20180626 16:05:05.885"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.886" starttime="20180626 16:05:05.884"></status>
+</kw>
+<kw type="foritem" name="${col} = 13">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.886" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.886" starttime="20180626 16:05:05.886"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.887" level="INFO">QRTS00003 : 122 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.887" starttime="20180626 16:05:05.887"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.887" starttime="20180626 16:05:05.887"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.887" starttime="20180626 16:05:05.886"></status>
+</kw>
+<kw type="foritem" name="${col} = 14">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.888" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.888" starttime="20180626 16:05:05.887"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.889" level="INFO">QRTS00003 : 402 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.889" starttime="20180626 16:05:05.889"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.889" starttime="20180626 16:05:05.888"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.889" starttime="20180626 16:05:05.887"></status>
+</kw>
+<kw type="foritem" name="${col} = 15">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.890" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.890" starttime="20180626 16:05:05.889"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.890" level="INFO">QRTS00003 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.891" starttime="20180626 16:05:05.890"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.891" starttime="20180626 16:05:05.890"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.891" starttime="20180626 16:05:05.889"></status>
+</kw>
+<kw type="foritem" name="${col} = 16">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.891" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.891" starttime="20180626 16:05:05.891"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.892" level="INFO">QRTS00003 : 322 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.892" starttime="20180626 16:05:05.892"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.892" starttime="20180626 16:05:05.891"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.892" starttime="20180626 16:05:05.891"></status>
+</kw>
+<kw type="foritem" name="${col} = 17">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.892" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.893" starttime="20180626 16:05:05.892"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.893" level="INFO">QRTS00003 : 192 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.894" starttime="20180626 16:05:05.893"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.894" starttime="20180626 16:05:05.893"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.894" starttime="20180626 16:05:05.892"></status>
+</kw>
+<kw type="foritem" name="${col} = 18">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.894" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.895" starttime="20180626 16:05:05.894"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.895" level="INFO">QRTS00003 : 132 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.895" starttime="20180626 16:05:05.895"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.895" starttime="20180626 16:05:05.895"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.895" starttime="20180626 16:05:05.894"></status>
+</kw>
+<kw type="foritem" name="${col} = 19">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.896" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.896" starttime="20180626 16:05:05.896"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.897" level="INFO">QRTS00003 : 412 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.897" starttime="20180626 16:05:05.896"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.897" starttime="20180626 16:05:05.896"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.897" starttime="20180626 16:05:05.895"></status>
+</kw>
+<kw type="foritem" name="${col} = 20">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.897" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.897" starttime="20180626 16:05:05.897"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.898" level="INFO">QRTS00003 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.898" starttime="20180626 16:05:05.898"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.898" starttime="20180626 16:05:05.898"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.898" starttime="20180626 16:05:05.897"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.898" starttime="20180626 16:05:05.866"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.898" starttime="20180626 16:05:05.865"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.898" starttime="20180626 16:05:05.865"></status>
+</kw>
+<kw type="foritem" name="${row} = 3">
+<kw name="Handle Item Kafka">
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<kw type="for" name="${col} IN RANGE [ ${no_of_columns} ]">
+<kw type="foritem" name="${col} = 0">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.899" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.899" starttime="20180626 16:05:05.899"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.900" level="INFO">QRTS00004 : QRTS00004 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.900" starttime="20180626 16:05:05.900"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.900" starttime="20180626 16:05:05.900"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.900" starttime="20180626 16:05:05.899"></status>
+</kw>
+<kw type="foritem" name="${col} = 1">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.901" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.901" starttime="20180626 16:05:05.900"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.902" level="INFO">QRTS00004 : Alcor Shallow KOBE Work exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.902" starttime="20180626 16:05:05.901"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.902" starttime="20180626 16:05:05.901"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.902" starttime="20180626 16:05:05.900"></status>
+</kw>
+<kw type="foritem" name="${col} = 2">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.903" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.903" starttime="20180626 16:05:05.902"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.904" level="INFO">QRTS00004 : Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.904" starttime="20180626 16:05:05.903"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.904" starttime="20180626 16:05:05.903"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.904" starttime="20180626 16:05:05.902"></status>
+</kw>
+<kw type="foritem" name="${col} = 3">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.904" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.904" starttime="20180626 16:05:05.904"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.905" level="INFO">QRTS00004 : pcs exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.905" starttime="20180626 16:05:05.905"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.905" starttime="20180626 16:05:05.905"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.905" starttime="20180626 16:05:05.904"></status>
+</kw>
+<kw type="foritem" name="${col} = 4">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.906" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.906" starttime="20180626 16:05:05.906"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.907" level="INFO">QRTS00004 : Full exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.907" starttime="20180626 16:05:05.906"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.907" starttime="20180626 16:05:05.906"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.907" starttime="20180626 16:05:05.905"></status>
+</kw>
+<kw type="foritem" name="${col} = 5">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.907" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.907" starttime="20180626 16:05:05.907"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.909" level="INFO">QRTS00004 : Tidak boleh dibanting exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.909" starttime="20180626 16:05:05.908"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.909" starttime="20180626 16:05:05.908"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.909" starttime="20180626 16:05:05.907"></status>
+</kw>
+<kw type="foritem" name="${col} = 6">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.909" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.909" starttime="20180626 16:05:05.909"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.910" level="INFO">QRTS00004 : 303 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.910" starttime="20180626 16:05:05.910"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.910" starttime="20180626 16:05:05.909"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.910" starttime="20180626 16:05:05.909"></status>
+</kw>
+<kw type="foritem" name="${col} = 7">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.911" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.911" starttime="20180626 16:05:05.910"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.912" level="INFO">QRTS00004 : 173 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.912" starttime="20180626 16:05:05.911"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.912" starttime="20180626 16:05:05.911"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.912" starttime="20180626 16:05:05.910"></status>
+</kw>
+<kw type="foritem" name="${col} = 8">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.913" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.913" starttime="20180626 16:05:05.912"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.914" level="INFO">QRTS00004 : 123 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.914" starttime="20180626 16:05:05.913"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.914" starttime="20180626 16:05:05.913"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.914" starttime="20180626 16:05:05.912"></status>
+</kw>
+<kw type="foritem" name="${col} = 9">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.914" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.914" starttime="20180626 16:05:05.914"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.915" level="INFO">QRTS00004 : 403 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.915" starttime="20180626 16:05:05.915"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.915" starttime="20180626 16:05:05.915"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.915" starttime="20180626 16:05:05.914"></status>
+</kw>
+<kw type="foritem" name="${col} = 10">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.916" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.916" starttime="20180626 16:05:05.915"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.917" level="INFO">QRTS00004 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.917" starttime="20180626 16:05:05.916"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.917" starttime="20180626 16:05:05.916"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.917" starttime="20180626 16:05:05.915"></status>
+</kw>
+<kw type="foritem" name="${col} = 11">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.917" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.917" starttime="20180626 16:05:05.917"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.918" level="INFO">QRTS00004 : 303 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.918" starttime="20180626 16:05:05.918"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.918" starttime="20180626 16:05:05.917"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.918" starttime="20180626 16:05:05.917"></status>
+</kw>
+<kw type="foritem" name="${col} = 12">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.919" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.919" starttime="20180626 16:05:05.918"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.919" level="INFO">QRTS00004 : 173 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.919" starttime="20180626 16:05:05.919"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.920" starttime="20180626 16:05:05.919"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.920" starttime="20180626 16:05:05.918"></status>
+</kw>
+<kw type="foritem" name="${col} = 13">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.920" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.920" starttime="20180626 16:05:05.920"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.921" level="INFO">QRTS00004 : 123 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.921" starttime="20180626 16:05:05.921"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.921" starttime="20180626 16:05:05.920"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.922" starttime="20180626 16:05:05.920"></status>
+</kw>
+<kw type="foritem" name="${col} = 14">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.922" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.922" starttime="20180626 16:05:05.922"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.923" level="INFO">QRTS00004 : 403 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.923" starttime="20180626 16:05:05.922"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.923" starttime="20180626 16:05:05.922"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.923" starttime="20180626 16:05:05.922"></status>
+</kw>
+<kw type="foritem" name="${col} = 15">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.923" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.924" starttime="20180626 16:05:05.923"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.924" level="INFO">QRTS00004 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.924" starttime="20180626 16:05:05.924"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.924" starttime="20180626 16:05:05.924"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.924" starttime="20180626 16:05:05.923"></status>
+</kw>
+<kw type="foritem" name="${col} = 16">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.925" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.925" starttime="20180626 16:05:05.925"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.926" level="INFO">QRTS00004 : 323 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.926" starttime="20180626 16:05:05.925"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.926" starttime="20180626 16:05:05.925"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.926" starttime="20180626 16:05:05.924"></status>
+</kw>
+<kw type="foritem" name="${col} = 17">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.927" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.927" starttime="20180626 16:05:05.926"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.927" level="INFO">QRTS00004 : 193 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.927" starttime="20180626 16:05:05.927"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.927" starttime="20180626 16:05:05.927"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.927" starttime="20180626 16:05:05.926"></status>
+</kw>
+<kw type="foritem" name="${col} = 18">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.928" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.928" starttime="20180626 16:05:05.928"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.929" level="INFO">QRTS00004 : 133 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.929" starttime="20180626 16:05:05.928"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.929" starttime="20180626 16:05:05.928"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.929" starttime="20180626 16:05:05.928"></status>
+</kw>
+<kw type="foritem" name="${col} = 19">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.929" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.930" starttime="20180626 16:05:05.929"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.931" level="INFO">QRTS00004 : 413 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.931" starttime="20180626 16:05:05.930"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.931" starttime="20180626 16:05:05.930"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.931" starttime="20180626 16:05:05.929"></status>
+</kw>
+<kw type="foritem" name="${col} = 20">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.931" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.931" starttime="20180626 16:05:05.931"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.932" level="INFO">QRTS00004 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.932" starttime="20180626 16:05:05.932"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.932" starttime="20180626 16:05:05.932"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.932" starttime="20180626 16:05:05.931"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.932" starttime="20180626 16:05:05.899"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.932" starttime="20180626 16:05:05.899"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.932" starttime="20180626 16:05:05.899"></status>
+</kw>
+<kw type="foritem" name="${row} = 4">
+<kw name="Handle Item Kafka">
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<kw type="for" name="${col} IN RANGE [ ${no_of_columns} ]">
+<kw type="foritem" name="${col} = 0">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.933" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.933" starttime="20180626 16:05:05.933"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.934" level="INFO">QRTS00005 : QRTS00005 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.934" starttime="20180626 16:05:05.934"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.934" starttime="20180626 16:05:05.934"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.934" starttime="20180626 16:05:05.933"></status>
+</kw>
+<kw type="foritem" name="${col} = 1">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.935" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.935" starttime="20180626 16:05:05.935"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.936" level="INFO">QRTS00005 : Alcor Deep MICIN Fry Wok exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.936" starttime="20180626 16:05:05.935"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.936" starttime="20180626 16:05:05.935"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.936" starttime="20180626 16:05:05.935"></status>
+</kw>
+<kw type="foritem" name="${col} = 2">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.936" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.937" starttime="20180626 16:05:05.936"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.937" level="INFO">QRTS00005 : Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.937" starttime="20180626 16:05:05.937"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.937" starttime="20180626 16:05:05.937"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.937" starttime="20180626 16:05:05.936"></status>
+</kw>
+<kw type="foritem" name="${col} = 3">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.938" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.938" starttime="20180626 16:05:05.938"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.939" level="INFO">QRTS00005 : pcs exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.939" starttime="20180626 16:05:05.938"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.939" starttime="20180626 16:05:05.938"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.939" starttime="20180626 16:05:05.938"></status>
+</kw>
+<kw type="foritem" name="${col} = 4">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.940" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.940" starttime="20180626 16:05:05.939"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.941" level="INFO">QRTS00005 : Full exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.941" starttime="20180626 16:05:05.941"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.941" starttime="20180626 16:05:05.940"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.941" starttime="20180626 16:05:05.939"></status>
+</kw>
+<kw type="foritem" name="${col} = 5">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.942" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.942" starttime="20180626 16:05:05.941"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.943" level="INFO">QRTS00005 : Tidak boleh dibanting exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.943" starttime="20180626 16:05:05.942"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.943" starttime="20180626 16:05:05.942"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.943" starttime="20180626 16:05:05.941"></status>
+</kw>
+<kw type="foritem" name="${col} = 6">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.943" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.943" starttime="20180626 16:05:05.943"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.944" level="INFO">QRTS00005 : 304 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.944" starttime="20180626 16:05:05.944"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.944" starttime="20180626 16:05:05.943"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.944" starttime="20180626 16:05:05.943"></status>
+</kw>
+<kw type="foritem" name="${col} = 7">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.945" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.945" starttime="20180626 16:05:05.944"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.945" level="INFO">QRTS00005 : 174 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.946" starttime="20180626 16:05:05.945"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.946" starttime="20180626 16:05:05.945"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.946" starttime="20180626 16:05:05.944"></status>
+</kw>
+<kw type="foritem" name="${col} = 8">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.946" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.946" starttime="20180626 16:05:05.946"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.947" level="INFO">QRTS00005 : 124 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.947" starttime="20180626 16:05:05.947"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.947" starttime="20180626 16:05:05.946"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.947" starttime="20180626 16:05:05.946"></status>
+</kw>
+<kw type="foritem" name="${col} = 9">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.947" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.948" starttime="20180626 16:05:05.947"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.948" level="INFO">QRTS00005 : 404 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.949" starttime="20180626 16:05:05.948"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.949" starttime="20180626 16:05:05.948"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.949" starttime="20180626 16:05:05.947"></status>
+</kw>
+<kw type="foritem" name="${col} = 10">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.949" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.949" starttime="20180626 16:05:05.949"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.951" level="INFO">QRTS00005 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.951" starttime="20180626 16:05:05.950"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.951" starttime="20180626 16:05:05.950"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.951" starttime="20180626 16:05:05.949"></status>
+</kw>
+<kw type="foritem" name="${col} = 11">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.951" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.951" starttime="20180626 16:05:05.951"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.952" level="INFO">QRTS00005 : 304 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.952" starttime="20180626 16:05:05.952"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.952" starttime="20180626 16:05:05.951"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.952" starttime="20180626 16:05:05.951"></status>
+</kw>
+<kw type="foritem" name="${col} = 12">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.953" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.953" starttime="20180626 16:05:05.952"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.954" level="INFO">QRTS00005 : 174 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.954" starttime="20180626 16:05:05.953"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.954" starttime="20180626 16:05:05.953"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.954" starttime="20180626 16:05:05.952"></status>
+</kw>
+<kw type="foritem" name="${col} = 13">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.954" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.954" starttime="20180626 16:05:05.954"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.955" level="INFO">QRTS00005 : 124 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.955" starttime="20180626 16:05:05.955"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.955" starttime="20180626 16:05:05.954"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.955" starttime="20180626 16:05:05.954"></status>
+</kw>
+<kw type="foritem" name="${col} = 14">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.956" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.956" starttime="20180626 16:05:05.955"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.956" level="INFO">QRTS00005 : 404 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.957" starttime="20180626 16:05:05.956"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.957" starttime="20180626 16:05:05.956"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.957" starttime="20180626 16:05:05.955"></status>
+</kw>
+<kw type="foritem" name="${col} = 15">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.957" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.957" starttime="20180626 16:05:05.957"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.958" level="INFO">QRTS00005 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.959" starttime="20180626 16:05:05.958"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.959" starttime="20180626 16:05:05.957"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.959" starttime="20180626 16:05:05.957"></status>
+</kw>
+<kw type="foritem" name="${col} = 16">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.959" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.959" starttime="20180626 16:05:05.959"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.960" level="INFO">QRTS00005 : 324 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.960" starttime="20180626 16:05:05.960"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.960" starttime="20180626 16:05:05.959"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.960" starttime="20180626 16:05:05.959"></status>
+</kw>
+<kw type="foritem" name="${col} = 17">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.961" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.961" starttime="20180626 16:05:05.960"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.962" level="INFO">QRTS00005 : 194 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.962" starttime="20180626 16:05:05.961"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.962" starttime="20180626 16:05:05.961"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.962" starttime="20180626 16:05:05.960"></status>
+</kw>
+<kw type="foritem" name="${col} = 18">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.962" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.962" starttime="20180626 16:05:05.962"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.963" level="INFO">QRTS00005 : 134 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.963" starttime="20180626 16:05:05.963"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.964" starttime="20180626 16:05:05.962"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.964" starttime="20180626 16:05:05.962"></status>
+</kw>
+<kw type="foritem" name="${col} = 19">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.964" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.964" starttime="20180626 16:05:05.964"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.965" level="INFO">QRTS00005 : 414 exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.965" starttime="20180626 16:05:05.965"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.965" starttime="20180626 16:05:05.964"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.965" starttime="20180626 16:05:05.964"></status>
+</kw>
+<kw type="foritem" name="${col} = 20">
+<kw name="Match Item Details" library="kafkaMessage">
+<arguments>
+<arg>${items[${row}][${col}]}</arg>
+<arg>${messages}</arg>
+</arguments>
+<assign>
+<var>${status}</var>
+</assign>
+<msg timestamp="20180626 16:05:05.966" level="INFO">${status} = True</msg>
+<status status="PASS" endtime="20180626 16:05:05.966" starttime="20180626 16:05:05.965"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka</arg>
+</arguments>
+<msg timestamp="20180626 16:05:05.967" level="INFO">QRTS00005 : S exists in Kafka</msg>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.966"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.966"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.965"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.933"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.933"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.933"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.796"></status>
+</kw>
+<status status="PASS" endtime="20180626 16:05:05.967" starttime="20180626 16:05:05.340"></status>
+</kw>
+<kw name="Match Details With Couchbase">
+<kw type="for" name="${row} IN RANGE [ ${no_of_rows} ]">
+<kw type="foritem" name="${row} = 0">
+<kw name="Handle Item Couchbase">
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<kw type="for" name="${col} IN RANGE [ ${no_of_columns} ]">
+<kw type="foritem" name="${col} = 0">
+<kw name="Check In Couchbase" library="couchbaseCheck">
+<arguments>
+<arg>${items[${row}][0]}</arg>
+<arg>${columns[${col}]}</arg>
+<arg>${items[${row}][${col}]}</arg>
+</arguments>
+<assign>
+<var>${cb}</var>
+</assign>
+<msg timestamp="20180626 16:05:06.140" level="INFO">${cb} = True</msg>
+<status status="PASS" endtime="20180626 16:05:06.140" starttime="20180626 16:05:05.968"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} does not exist in Couchbase</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log</arg>
+<arg>${items[${row}][0]} : ${items[${row}][${col}]} exists in Couchbase</arg>
+</arguments>
+<msg timestamp="20180626 16:05:06.143" level="FAIL">Variable '${status}' not found.</msg>
+<status status="FAIL" endtime="20180626 16:05:06.143" starttime="20180626 16:05:06.141"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.144" starttime="20180626 16:05:05.968"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.144" starttime="20180626 16:05:05.968"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.144" starttime="20180626 16:05:05.967"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.145" starttime="20180626 16:05:05.967"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.145" starttime="20180626 16:05:05.967"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.145" starttime="20180626 16:05:05.967"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.146" starttime="20180626 16:05:05.298"></status>
+</kw>
+<status status="FAIL" endtime="20180626 16:05:06.146" critical="yes" starttime="20180626 16:05:05.297">Variable '${status}' not found.</status>
+</test>
+<status status="FAIL" endtime="20180626 16:05:06.148" starttime="20180626 16:05:01.786"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="1">Critical Tests</stat>
+<stat fail="1" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Testcase" pass="1">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,8 +1,12 @@
 from confluent_kafka import Consumer, KafkaError
+import re
+import string
 
 class kafkaMessage(object):
 
     def get_topic_messages(self, topics, server):
+        '''
+        '''
         settings = {
             'bootstrap.servers': server,
             'group.id': 'item-service',
@@ -14,21 +18,18 @@ class kafkaMessage(object):
 
         c = Consumer(settings)
         c.subscribe([topics])
-
         messages = []
 
         try:
             while True:
                 msg = c.poll(0.1)
-                # print(msg)
                 if msg is None:
                     continue
                 elif not msg.error():
-                    messages.append(msg.value())
-                    # print('Received message: {0}'.format(msg.value()))
+                    temp = msg.value()
+                    messages.append(temp)
+
                 elif msg.error().code() == KafkaError._PARTITION_EOF:
-                    # print('End of partition reached {0}/{1}'
-                    #    .format(msg.topic(), msg.partition()))
                     break
                 else:
                     print('Error occured: {0}'.format(msg.error().str()))
@@ -40,8 +41,8 @@ class kafkaMessage(object):
         return messages
 
     def match_file_with_kafka(self, sku, kafka):
-
-        result = []
+        '''
+        '''
         for sku_id in sku:
 
             found = False
@@ -53,5 +54,23 @@ class kafkaMessage(object):
         
         return True
 
-        
-            
+    def match_item_details(self, item, kafka):
+        '''
+        '''
+        if type(item) is int:
+            return True
+
+        item = str(item)
+        item = item.lower()
+
+        for msg in kafka:
+
+            msg = str(msg)
+            msg = msg.lower()
+            if item in msg:
+                return True
+
+        return False
+
+#k = kafkaMessage()
+#s = k.get_topic_messages('SkuCreateRequested','10.99.143.96:9092')

@@ -5,6 +5,8 @@ This automation supply chain tool is built with robot framework and python. Plea
 ## Prerequisite
 
 * Python 3.6
+* Robot Framework
+* Chromedriver
 * Install ```requirements.txt```
 
 ## How to Execute
