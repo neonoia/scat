@@ -1,6 +1,13 @@
 from confluent_kafka import Consumer, KafkaError
-import re
-import string
+from robot.api import logger
+
+def success(item):
+    info = item + " exists in Kafka Topic"
+    logger.info(info)
+
+def fail(item):
+    info = item + " does not exist in Kafka Topic"
+    logger.error(info)
 
 class kafkaMessage(object):
 
@@ -43,27 +50,40 @@ class kafkaMessage(object):
 
         return messages
 
-    def match_item_details(self, item, kafka):
+    def match_kafka_item_details(self, row, col, items, kafka):
         '''
         Creates a keyword named "Match Item Details"
         Search the item details in kafka messages list. 
         Returns boolean value whether the details are 
         present in kafka messages or not.
         '''
-        if type(item) is int:
-            return True
 
-        item = str(item)
-        item = item.lower()
+        for i in range (row):
 
-        for msg in kafka:
+            for j in range (col):
+                
+                item = items[i][j]
+                
+                if type(item) is int:
+                    success(str(item))
+                else:
+                    item = str(item)
+                    item = item.lower()
+                    found = False
 
-            msg = str(msg)
-            msg = msg.lower()
-            if item in msg:
-                return True
+                    for msg in kafka:
+                        msg = str(msg)
+                        msg = msg.lower()
+                        if item in msg:
+                            found = True
+                            success(item)
+                            break
 
-        return False
+                if not found:
+                    fail(item)
+                    return False
+
+        return True
 
 #k = kafkaMessage()
 #s = k.get_topic_messages('SkuCreateRequested','10.99.143.96:9092')

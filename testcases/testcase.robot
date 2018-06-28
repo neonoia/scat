@@ -9,13 +9,18 @@ Library     ../lib/couchbaseCheck.py
 ${filename}        /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
 
 *** Test Cases ***
-Initialize Browser To Upload
+# Initialize Browser To Upload
+SPLY-01
     Open Browser To Upload File
-Check Status
+# Check File Upload Status
+SPLY-02
     Get Upload Time
     Wait Until File Processed
-Check And Match Columns
-    Match Columns
+# Check And Match Excel Columns Details
+SPLY-03
+    Get Columns Data
+    Match Details With Kafka
+    Match Details With Couchbase
 
 *** Keywords ***
 Open Browser to Upload File
@@ -48,38 +53,24 @@ Wait Until File Processed
     Click Element                   xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a
     Page Should Contain             ${time}
 
-Match Columns
-    ${no_of_columns}                Get Number of Columns           ${filename}
-    ${no_of_rows}                   Get Number of Rows              ${filename}
+Get Columns Data
+    ${col}                          Get Number of Columns           ${filename}
+    ${row}                          Get Number of Rows              ${filename}
     ${columns}                      Get Column Names                ${filename}
     ${items}                        Get List of Items               ${filename}
-    Set Global Variable             ${no_of_columns}
-    Set Global Variable             ${no_of_rows}
+    Set Global Variable             ${col}
+    Set Global Variable             ${row}
     Set Global Variable             ${columns}
     Set Global Variable             ${items}
-    Match Details With Kafka
-    Match Details With Couchbase
 
 Match Details With Kafka
-    ${messages}                     Get Topic Messages                  SkuCreateRequested              10.99.143.96:9092
+    ${messages}                     Get Topic Messages                  SkuCreateRequested      10.99.143.96:9092
     Set Global Variable             ${messages}
-    :FOR    ${row}                  IN RANGE        ${no_of_rows}
-    \    Handle Item Kafka          ${row}
-
-Handle Item Kafka
-    [Arguments]    ${row}
-    :FOR    ${col}                  IN RANGE        ${no_of_columns}
-    \   ${status}                   Match Item Details                  ${items[${row}][${col}]}        ${messages}
-    \   Run Keyword If              '${status}' == 'False'              Log                             ${items[${row}][0]} does not exist in Kafka, details: ${items[${row}][${col}]}      ERROR
-    \   ...                         ELSE                                Log                             ${items[${row}][0]} : ${items[${row}][${col}]} exists in Kafka
+    ${kafka_status}                 Match Kafka Item Details            ${row}      ${col}      ${items}        ${messages}
+        Run Keyword If              '${kafka_status}' == 'False'        Log                     Some item details do not exist in Kafka Topic.                  ERROR
+    ...                             ELSE                                Log                     All Item and its details are present in Kafka Topic.
 
 Match Details With Couchbase
-    :FOR    ${row}                  IN RANGE        ${no_of_rows}
-    \    Handle Item Couchbase      ${row}
-
-Handle Item Couchbase
-    [Arguments]    ${row}
-    :FOR    ${col}                  IN RANGE        ${no_of_columns}
-    \   ${status}=                  Check In Couchbase                  ${items[${row}][0]}             ${columns[${col}]}          ${items[${row}][${col}]}
-    \   Run Keyword If              '${status}' == 'False'              Log                             ${items[${row}][0]} does not exist in Couchbase ${items[${row}][0]} ${columns[${col}]} ${items[${row}][${col}]}     ERROR
-    \   ...                         ELSE                                Log                             ${items[${row}][0]} : ${items[${row}][${col}]} exists in Couchbase \n
+    ${couchbase_status}             Match Couchbase Item Details        ${row}      ${col}      ${items}        ${columns}
+    Run Keyword If                  '${couchbase_status}' == 'False'    Log                     Some item details do not exist in Couchbase Server.             ERROR
+    ...                             ELSE                                Log                     All Item and its details are present in Couchbase Server.
