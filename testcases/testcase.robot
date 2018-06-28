@@ -12,7 +12,8 @@ ${filename}        /home/budiman/Documents/automation-supply-chain/files/SKU.xls
 Initialize Browser To Upload
     Open Browser To Upload File
 Check Status
-    Check Process Status
+    Get Upload Time
+    Wait Until File Processed
 Check And Match Columns
     Match Columns
 
@@ -30,22 +31,27 @@ Upload File
     Page Should Contain Button      xpath://*[@id="myButton"]
     Click Element                   xpath://*[@id="myButton"]
 
-Check Process Status
-    ${date}=                        Get Current Date                exclude_millis=yes
-    Set Global Variable             ${date}
-    Wait Until File Processed
+Get Upload Time
+    ${day} =	                    Get Time	                    day
+    ${month} =	                    Get Time	                    month
+    ${year} =	                    Get Time	                    year
+    ${hour} =	                    Get Time	                    hour
+    ${min} =	                    Get Time	                    min
+    ${date} =                       Catenate                        SEPARATOR=-     ${day}  ${month}  ${year}
+    ${day}                          Catenate                        SEPARATOR=:     ${hour}  ${min}
+    ${time}                         Catenate                        ${date}     ${day}
+    Set Global Variable             ${time}
 
 Wait Until File Processed
-    Sleep                           5s      # Set to sleep, because to detect display we need to write a script
-    #Wait Until Element Contains     xpath://*[@id="upload-success"]/div[2]/div[1]/div/span/b            Upload File SKU Sukses!
-    #Click Element                   xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a
-    #Page Should Contain             ${date}
+    Sleep                           10s
+    Wait Until Element Is Enabled   xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a
+    Click Element                   xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a
+    Page Should Contain             ${time}
 
 Match Columns
     ${no_of_columns}                Get Number of Columns           ${filename}
     ${no_of_rows}                   Get Number of Rows              ${filename}
     ${columns}                      Get Column Names                ${filename}
-    Log To Console                  ${columns}
     ${items}                        Get List of Items               ${filename}
     Set Global Variable             ${no_of_columns}
     Set Global Variable             ${no_of_rows}
