@@ -25,26 +25,20 @@ SPLY-03
 *** Keywords ***
 Open Browser to Upload File
     Open Browser                    http://10.99.143.80:8080/       browser=chrome
-    Choose File To Be Uploaded
-    Upload File
-
-Choose File To Be Uploaded
     Page Should Contain Button      xpath://*[@id="file"]
     Choose File                     xpath://*[@id="file"]           ${filename}
-
-Upload File
     Page Should Contain Button      xpath://*[@id="myButton"]
     Click Element                   xpath://*[@id="myButton"]
 
 Get Upload Time
-    ${day} =	                    Get Time	                    day
-    ${month} =	                    Get Time	                    month
-    ${year} =	                    Get Time	                    year
-    ${hour} =	                    Get Time	                    hour
-    ${min} =	                    Get Time	                    min
-    ${date} =                       Catenate                        SEPARATOR=-     ${day}  ${month}  ${year}
-    ${day}                          Catenate                        SEPARATOR=:     ${hour}  ${min}
-    ${time}                         Catenate                        ${date}     ${day}
+    ${day}= 	                    Get Time	                    day
+    ${month}=  	                    Get Time	                    month
+    ${year}=	                    Get Time	                    year
+    ${hour}=	                    Get Time	                    hour
+    ${min}= 	                    Get Time	                    min
+    ${date}=                        Catenate                        SEPARATOR=-     ${day}   ${month}   ${year}
+    ${day}=                         Catenate                        SEPARATOR=:     ${hour}  ${min}
+    ${time}=                        Catenate                        ${date}         ${day}
     Set Global Variable             ${time}
 
 Wait Until File Processed
@@ -65,9 +59,8 @@ Get Columns Data
 
 Match Details With Kafka
     ${messages}                     Get Topic Messages                  SkuCreateRequested      10.99.143.96:9092
-    Set Global Variable             ${messages}
     ${kafka_status}                 Match Kafka Item Details            ${row}      ${col}      ${items}        ${messages}
-        Run Keyword If              '${kafka_status}' == 'False'        Log                     Some item details do not exist in Kafka Topic.                  ERROR
+    Run Keyword If                  '${kafka_status}' == 'False'        Log                     Some item details do not exist in Kafka Topic.                  ERROR
     ...                             ELSE                                Log                     All Item and its details are present in Kafka Topic.
 
 Match Details With Couchbase
