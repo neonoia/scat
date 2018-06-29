@@ -7,9 +7,11 @@ This automation supply chain tool is built with robot framework and python. Plea
 * Python 3.6
 * Robot Framework
 * Chromedriver
+* [Couchbase](https://developer.couchbase.com/documentation/server/4.5/sdk/c/start-using-sdk.html)
 * Install ```requirements.txt```
 
 ## How to Execute
 
 * Before executing, change the location of the desired file to be uploaded and checked in its declaration right at line 9.
+* Also update the file first, make sure the ids are not present in the couchbase server.
 * Run this command ```chmod +x run.sh``` and finally ```./run.sh```

@@ -10,10 +10,10 @@ Resource    preparation.robot
 ${filename}        /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
 
 *** Test Cases ***
-# Initialize Browser To Upload
 Preparation
     Preparation browser
 SPLY-01
+# Initialize Browser To Upload
     Open Browser To Upload File
 # Check File Upload Status
 SPLY-02
