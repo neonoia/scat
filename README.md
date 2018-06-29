@@ -12,6 +12,6 @@ This automation supply chain tool is built with robot framework and python. Plea
 
 ## How to Execute
 
-* Before executing, change the location of the desired file to be uploaded and checked in its declaration right at line 9.
+* Before executing, change the location of the desired file to be uploaded and checked in its declaration right at line 10 inside testcase.robot.
 * Also update the file first, make sure the ids are not present in the couchbase server.
 * Run this command ```chmod +x run.sh``` and finally ```./run.sh```
