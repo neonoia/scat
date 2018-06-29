@@ -1,0 +1,768 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180629 14:16:44.405" generator="Robot 3.0.4 (Python 2.7.12 on linux2)">
+<suite source="/home/budiman/Documents/automation-supply-chain/testcases/testcase.robot" id="s1" name="Testcase">
+<test id="s1-t1" name="SPLY-01">
+<kw name="Open Browser to Upload File">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://10.99.143.80:8080/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20180629 14:16:44.669" level="INFO">Opening browser 'chrome' to base url 'http://10.99.143.80:8080/'.</msg>
+<status status="PASS" endtime="20180629 14:16:50.738" starttime="20180629 14:16:44.669"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+</arguments>
+<msg timestamp="20180629 14:16:50.757" level="INFO">Current page contains input 'xpath://*[@id="file"]'.</msg>
+<status status="PASS" endtime="20180629 14:16:50.757" starttime="20180629 14:16:50.739"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+<arg>${filename}</arg>
+</arguments>
+<status status="PASS" endtime="20180629 14:16:50.781" starttime="20180629 14:16:50.757"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180629 14:16:50.803" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;&lt;head&gt;
+    
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+
+    &lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /&gt;
+    &lt;meta name="viewport" /&gt;
+
+    
+    &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" /&gt;
+    &lt;link href="/assets/css/template.css?r=0.1.0" rel="stylesheet" /&gt;
+
+    
+    &lt;link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" /&gt;
+
+    &lt;title&gt;Index Page - Supply Chain Web&lt;/title&gt;
+    
+    
+    &lt;script src="http://code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+&lt;div id="upload-loader" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content" style="width: 200px;"&gt;
+            &lt;div class="progress"&gt;
+                &lt;div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    
+    &lt;nav class="navbar navbar-expand-lg navbar-dark navigation-bar"&gt;
+        &lt;a class="navbar-brand navbar-title" href="#"&gt;RUMA Logistics&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarText"&gt;
+            &lt;ul class="navbar-nav mr-auto"&gt;
+                
+            &lt;/ul&gt;
+            &lt;span class="navbar-user"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-sm-2 sidebar"&gt;Tejo&lt;/div&gt;
+                    &lt;div class="col-sm-2 navbar-title"&gt;&lt;img src="../../assets/img/caret-down.png" /&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="container-fluid content"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-3"&gt;
+                &lt;div class="container-fluid sidebar"&gt;
+                    &lt;ul class="navbar-nav mr-auto"&gt;
+                        &lt;li class="nav-item sidebar-title"&gt;
+                            &lt;span class="nav-link"&gt;&lt;b&gt;SKU&lt;/b&gt;&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link active-link" href="upload-file"&gt;Upload file SKU&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="history"&gt;History upload&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-title-center"&gt;
+                            &lt;a class="nav-link"&gt;&lt;b&gt;INVENTORY&lt;/b&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="#"&gt;Lorem ipsum&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-7"&gt;
+                &lt;div class="container-fluid"&gt;
+                    &lt;div id="upload-view"&gt;
+    &lt;div class="row sc-ads pt-2" id="upload-view"&gt;
+        &lt;div class="col-sm-5"&gt;
+           &lt;div class="container download-ads"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="text-center"&gt;Pastikan &lt;b&gt;file SKU yang akan diupload sesuai template SKU&lt;/b&gt; yang diberikan. &lt;br /&gt;Belum ada SKU template?&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;div class="container-fluid"&gt;
+                &lt;a href="/assets/TemplateUploadSKU.xlsx" class="download-ads" download=""&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-sm-2"&gt;
+                            &lt;span class="sc-download"&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="col-sm-10"&gt;
+                            &lt;p&gt;&lt;b class="text-green"&gt;Download&lt;/b&gt;&lt;br /&gt; &lt;b class="text-black"&gt;SKU Registration Template.csv&lt;/b&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+
+        &lt;div class="col-sm-9"&gt;
+            &lt;form id="upload-form" class="form-inline" enctype="multipart/form-data"&gt;
+                &lt;div class="container mt-3 mb-3"&gt;
+                    &lt;b&gt;&lt;label class="text-center sc-title"&gt;UPLOAD FILE SKU&lt;/label&gt;&lt;/b&gt;
+                &lt;/div&gt;
+
+            &lt;div class="custom-file"&gt;
+                &lt;input accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file" type="file" class="custom-file-input" id="file" required="" /&gt;
+                &lt;label id="custom-file-label" class="custom-file-label" for="file"&gt;SKU.xlsx&lt;/label&gt;
+
+            &lt;/div&gt;
+
+                &lt;button id="myButton" class="btn btn-primary btn-block mt-3" type="submit" name="myButton"&gt;UPLOAD&lt;/button&gt;
+
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-success" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title"&gt;&lt;b&gt;Upload File SKU Sukses!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="container content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;File Anda sedang diproses.&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;Cek history upload&lt;/b&gt; untuk memeriksa status file Anda.&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-fail" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist-red"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title-red"&gt;&lt;b&gt;Upload File SKU Gagal!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="upload-fail-content" class="container"&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error-logic" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;File Anda tidak bisa diproses. &lt;b&gt;Seluruh SKU belum terupload.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Perbaiki file SKU dan &lt;b&gt;upload ulang seluruh isi file.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row content-content"&gt;
+            &lt;div id="table-content" class="col"&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Terdapat kesalahan sistem, &lt;b&gt;mohon mencoba kembali.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Jika masih gagal, &lt;b&gt;mohon hubungi Tim IT.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+    function getFilename() {
+        var fieldVal = document.getElementById("file").value;
+        var label = document.getElementById("custom-file-label");
+        
+        fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+
+        if (fieldVal !== undefined || fieldVal !== "") {
+            label.innerHTML = fieldVal;
+        }
+    }
+&lt;/script&gt;
+&lt;script type="text/javascript" src="/assets/js/upload.js"&gt;&lt;/script&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-2"&gt;
+                &lt;div class="container-fluid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20180629 14:16:50.811" level="INFO">Current page contains button 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180629 14:16:50.811" starttime="20180629 14:16:50.782"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180629 14:16:50.811" level="INFO">Clicking element 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180629 14:16:50.861" starttime="20180629 14:16:50.811"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:50.861" starttime="20180629 14:16:44.669"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:50.862" critical="yes" starttime="20180629 14:16:44.668"></status>
+</test>
+<test id="s1-t2" name="SPLY-02">
+<kw name="Get Upload Time">
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.863" level="INFO">${day} = 29</msg>
+<status status="PASS" endtime="20180629 14:16:50.863" starttime="20180629 14:16:50.863"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>month</arg>
+</arguments>
+<assign>
+<var>${month}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.864" level="INFO">${month} = 06</msg>
+<status status="PASS" endtime="20180629 14:16:50.864" starttime="20180629 14:16:50.864"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>year</arg>
+</arguments>
+<assign>
+<var>${year}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.864" level="INFO">${year} = 2018</msg>
+<status status="PASS" endtime="20180629 14:16:50.864" starttime="20180629 14:16:50.864"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>hour</arg>
+</arguments>
+<assign>
+<var>${hour}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.865" level="INFO">${hour} = 14</msg>
+<status status="PASS" endtime="20180629 14:16:50.865" starttime="20180629 14:16:50.865"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>min</arg>
+</arguments>
+<assign>
+<var>${min}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.865" level="INFO">${min} = 16</msg>
+<status status="PASS" endtime="20180629 14:16:50.865" starttime="20180629 14:16:50.865"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=-</arg>
+<arg>${day}</arg>
+<arg>${month}</arg>
+<arg>${year}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.866" level="INFO">${date} = 29-06-2018</msg>
+<status status="PASS" endtime="20180629 14:16:50.866" starttime="20180629 14:16:50.865"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=:</arg>
+<arg>${hour}</arg>
+<arg>${min}</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.866" level="INFO">${day} = 14:16</msg>
+<status status="PASS" endtime="20180629 14:16:50.866" starttime="20180629 14:16:50.866"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180629 14:16:50.866" level="INFO">${time} = 29-06-2018 14:16</msg>
+<status status="PASS" endtime="20180629 14:16:50.866" starttime="20180629 14:16:50.866"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180629 14:16:50.867" level="INFO">${time} = 29-06-2018 14:16</msg>
+<status status="PASS" endtime="20180629 14:16:50.867" starttime="20180629 14:16:50.867"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:50.867" starttime="20180629 14:16:50.863"></status>
+</kw>
+<kw name="Wait Until File Processed">
+<kw name="Wait For Condition" library="Selenium2Library">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.getElementById("upload-loader").style.display == "none"</arg>
+<arg>timeout=30s</arg>
+</arguments>
+<status status="PASS" endtime="20180629 14:16:54.238" starttime="20180629 14:16:50.867"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20180629 14:16:54.239" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20180629 14:16:54.441" starttime="20180629 14:16:54.239"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180629 14:16:54.458" level="INFO">Current page contains text '29-06-2018 14:16'.</msg>
+<status status="PASS" endtime="20180629 14:16:54.458" starttime="20180629 14:16:54.441"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:54.458" starttime="20180629 14:16:50.867"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:54.458" critical="yes" starttime="20180629 14:16:50.862"></status>
+</test>
+<test id="s1-t3" name="SPLY-03">
+<kw name="Get Columns Data">
+<kw name="Get Number Of Columns" library="fileParser">
+<doc>Creates a keyword named "Get Numbers of Columns"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${col}</var>
+</assign>
+<msg timestamp="20180629 14:16:54.492" level="INFO">${col} = 21</msg>
+<status status="PASS" endtime="20180629 14:16:54.492" starttime="20180629 14:16:54.460"></status>
+</kw>
+<kw name="Get Number Of Rows" library="fileParser">
+<doc>Creates a keyword named "Get Number of Rows"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20180629 14:16:54.514" level="INFO">${row} = 100</msg>
+<status status="PASS" endtime="20180629 14:16:54.514" starttime="20180629 14:16:54.493"></status>
+</kw>
+<kw name="Get Column Names" library="fileParser">
+<doc>Creates a keyword named "Get Column Names"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${columns}</var>
+</assign>
+<msg timestamp="20180629 14:16:54.535" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180629 14:16:54.535" starttime="20180629 14:16:54.514"></status>
+</kw>
+<kw name="Get List Of Items" library="fileParser">
+<doc>Creates a keyword named "Get List of Items"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20180629 14:16:54.555" level="INFO">${items} = [[u'UCUL00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180629 14:16:54.555" starttime="20180629 14:16:54.535"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${col}</arg>
+</arguments>
+<msg timestamp="20180629 14:16:54.555" level="INFO">${col} = 21</msg>
+<status status="PASS" endtime="20180629 14:16:54.555" starttime="20180629 14:16:54.555"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<msg timestamp="20180629 14:16:54.556" level="INFO">${row} = 100</msg>
+<status status="PASS" endtime="20180629 14:16:54.556" starttime="20180629 14:16:54.556"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${columns}</arg>
+</arguments>
+<msg timestamp="20180629 14:16:54.557" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180629 14:16:54.557" starttime="20180629 14:16:54.556"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${items}</arg>
+</arguments>
+<msg timestamp="20180629 14:16:54.559" level="INFO">${items} = [[u'UCUL00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180629 14:16:54.559" starttime="20180629 14:16:54.557"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:54.559" starttime="20180629 14:16:54.459"></status>
+</kw>
+<kw name="Match Details With Kafka">
+<kw name="Match Kafka Item Details" library="kafkaMessage">
+<doc>Creates a keyword named "Match Item Details"</doc>
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+<arg>${items}</arg>
+<arg>SkuCreateRequested</arg>
+<arg>10.99.143.96:9092</arg>
+</arguments>
+<assign>
+<var>${kafka_status}</var>
+</assign>
+<msg timestamp="20180629 14:16:56.382" level="INFO">ucul00001 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.385" level="INFO">ucul00002 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.385" level="INFO">ucul00003 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.386" level="INFO">ucul00004 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.387" level="INFO">ucul00005 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.388" level="INFO">ucul00006 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.389" level="INFO">ucul00007 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.389" level="INFO">ucul00008 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.390" level="INFO">ucul00009 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.391" level="INFO">ucul00010 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.392" level="INFO">ucul00011 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.392" level="INFO">ucul00012 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.394" level="INFO">ucul00013 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.394" level="INFO">ucul00014 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.395" level="INFO">ucul00015 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.396" level="INFO">ucul00016 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.397" level="INFO">ucul00017 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.397" level="INFO">ucul00018 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.398" level="INFO">ucul00019 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.399" level="INFO">ucul00020 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.400" level="INFO">ucul00021 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.401" level="INFO">ucul00022 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.401" level="INFO">ucul00023 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.402" level="INFO">ucul00024 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.403" level="INFO">ucul00025 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.404" level="INFO">ucul00026 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.404" level="INFO">ucul00027 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.405" level="INFO">ucul00028 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.406" level="INFO">ucul00029 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.407" level="INFO">ucul00030 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.408" level="INFO">ucul00031 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.409" level="INFO">ucul00032 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.410" level="INFO">ucul00033 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.411" level="INFO">ucul00034 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.412" level="INFO">ucul00035 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.413" level="INFO">ucul00036 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.414" level="INFO">ucul00037 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.415" level="INFO">ucul00038 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.415" level="INFO">ucul00039 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.416" level="INFO">ucul00040 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.417" level="INFO">ucul00041 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.418" level="INFO">ucul00042 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.419" level="INFO">ucul00043 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.419" level="INFO">ucul00044 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.420" level="INFO">ucul00045 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.421" level="INFO">ucul00046 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.422" level="INFO">ucul00047 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.423" level="INFO">ucul00048 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.423" level="INFO">ucul00049 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.424" level="INFO">ucul00050 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.425" level="INFO">ucul00051 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.426" level="INFO">ucul00052 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.427" level="INFO">ucul00053 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.427" level="INFO">ucul00054 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.428" level="INFO">ucul00055 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.429" level="INFO">ucul00056 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.430" level="INFO">ucul00057 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.431" level="INFO">ucul00058 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.431" level="INFO">ucul00059 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.432" level="INFO">ucul00060 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.433" level="INFO">ucul00061 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.434" level="INFO">ucul00062 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.435" level="INFO">ucul00063 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.435" level="INFO">ucul00064 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.436" level="INFO">ucul00065 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.437" level="INFO">ucul00066 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.438" level="INFO">ucul00067 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.439" level="INFO">ucul00068 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.439" level="INFO">ucul00069 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.441" level="INFO">ucul00070 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.442" level="INFO">ucul00071 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.443" level="INFO">ucul00072 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.444" level="INFO">ucul00073 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.446" level="INFO">ucul00074 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.447" level="INFO">ucul00075 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.448" level="INFO">ucul00076 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.449" level="INFO">ucul00077 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.450" level="INFO">ucul00078 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.451" level="INFO">ucul00079 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.452" level="INFO">ucul00080 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.453" level="INFO">ucul00081 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.454" level="INFO">ucul00082 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.454" level="INFO">ucul00083 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.455" level="INFO">ucul00084 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.456" level="INFO">ucul00085 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.457" level="INFO">ucul00086 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.458" level="INFO">ucul00087 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.459" level="INFO">ucul00088 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.460" level="INFO">ucul00089 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.461" level="INFO">ucul00090 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.462" level="INFO">ucul00091 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.462" level="INFO">ucul00092 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.463" level="INFO">ucul00093 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.464" level="INFO">ucul00094 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.465" level="INFO">ucul00095 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.466" level="INFO">ucul00096 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.467" level="INFO">ucul00097 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.468" level="INFO">ucul00098 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.469" level="INFO">ucul00099 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.469" level="INFO">ucul00100 exists in Kafka Topic</msg>
+<msg timestamp="20180629 14:16:56.470" level="INFO">${kafka_status} = True</msg>
+<status status="PASS" endtime="20180629 14:16:56.470" starttime="20180629 14:16:54.559"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${kafka_status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>Some item details do not exist in Kafka Topic.</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>All Item and its details are present in Kafka Topic.</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>All Item and its details are present in Kafka Topic.</arg>
+</arguments>
+<status status="PASS" endtime="20180629 14:16:56.471" starttime="20180629 14:16:56.470"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:56.471" starttime="20180629 14:16:56.470"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:16:56.471" starttime="20180629 14:16:54.559"></status>
+</kw>
+<kw name="Match Details With Couchbase">
+<kw name="Match Couchbase Item Details" library="couchbaseCheck">
+<doc>Creates a keyword named "Match Couchbase Item Details"</doc>
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+<arg>${items}</arg>
+<arg>${columns}</arg>
+</arguments>
+<assign>
+<var>${couchbase_status}</var>
+</assign>
+<msg timestamp="20180629 14:16:56.653" level="INFO">UCUL00001: UCUL00001 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:56.843" level="INFO">UCUL00002: UCUL00002 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:57.039" level="INFO">UCUL00003: UCUL00003 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:57.252" level="INFO">UCUL00004: UCUL00004 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:57.432" level="INFO">UCUL00005: UCUL00005 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:57.653" level="INFO">UCUL00006: UCUL00006 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:57.831" level="INFO">UCUL00007: UCUL00007 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:58.036" level="INFO">UCUL00008: UCUL00008 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:58.216" level="INFO">UCUL00009: UCUL00009 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:58.416" level="INFO">UCUL00010: UCUL00010 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:58.685" level="INFO">UCUL00011: UCUL00011 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:58.879" level="INFO">UCUL00012: UCUL00012 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:59.064" level="INFO">UCUL00013: UCUL00013 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:59.346" level="INFO">UCUL00014: UCUL00014 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:59.622" level="INFO">UCUL00015: UCUL00015 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:16:59.815" level="INFO">UCUL00016: UCUL00016 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:00.022" level="INFO">UCUL00017: UCUL00017 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:00.232" level="INFO">UCUL00018: UCUL00018 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:00.895" level="INFO">UCUL00019: UCUL00019 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:01.152" level="INFO">UCUL00020: UCUL00020 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:01.351" level="INFO">UCUL00021: UCUL00021 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:01.647" level="INFO">UCUL00022: UCUL00022 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:01.851" level="INFO">UCUL00023: UCUL00023 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:02.040" level="INFO">UCUL00024: UCUL00024 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:02.215" level="INFO">UCUL00025: UCUL00025 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:02.414" level="INFO">UCUL00026: UCUL00026 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:02.650" level="INFO">UCUL00027: UCUL00027 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:02.871" level="INFO">UCUL00028: UCUL00028 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:03.086" level="INFO">UCUL00029: UCUL00029 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:03.279" level="INFO">UCUL00030: UCUL00030 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:03.463" level="INFO">UCUL00031: UCUL00031 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:03.658" level="INFO">UCUL00032: UCUL00032 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:03.832" level="INFO">UCUL00033: UCUL00033 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:04.038" level="INFO">UCUL00034: UCUL00034 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:04.259" level="INFO">UCUL00035: UCUL00035 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:04.495" level="INFO">UCUL00036: UCUL00036 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:04.686" level="INFO">UCUL00037: UCUL00037 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:04.867" level="INFO">UCUL00038: UCUL00038 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:05.066" level="INFO">UCUL00039: UCUL00039 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:05.247" level="INFO">UCUL00040: UCUL00040 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:05.445" level="INFO">UCUL00041: UCUL00041 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:05.635" level="INFO">UCUL00042: UCUL00042 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:05.810" level="INFO">UCUL00043: UCUL00043 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:06.006" level="INFO">UCUL00044: UCUL00044 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:06.176" level="INFO">UCUL00045: UCUL00045 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:06.367" level="INFO">UCUL00046: UCUL00046 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:06.534" level="INFO">UCUL00047: UCUL00047 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:06.703" level="INFO">UCUL00048: UCUL00048 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:06.877" level="INFO">UCUL00049: UCUL00049 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:07.060" level="INFO">UCUL00050: UCUL00050 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:07.253" level="INFO">UCUL00051: UCUL00051 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:07.455" level="INFO">UCUL00052: UCUL00052 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:07.643" level="INFO">UCUL00053: UCUL00053 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:07.832" level="INFO">UCUL00054: UCUL00054 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:08.043" level="INFO">UCUL00055: UCUL00055 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:08.230" level="INFO">UCUL00056: UCUL00056 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:08.456" level="INFO">UCUL00057: UCUL00057 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:08.636" level="INFO">UCUL00058: UCUL00058 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:08.830" level="INFO">UCUL00059: UCUL00059 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:09.045" level="INFO">UCUL00060: UCUL00060 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:09.241" level="INFO">UCUL00061: UCUL00061 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:09.561" level="INFO">UCUL00062: UCUL00062 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:09.737" level="INFO">UCUL00063: UCUL00063 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:09.921" level="INFO">UCUL00064: UCUL00064 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:10.096" level="INFO">UCUL00065: UCUL00065 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:10.295" level="INFO">UCUL00066: UCUL00066 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:10.580" level="INFO">UCUL00067: UCUL00067 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:10.743" level="INFO">UCUL00068: UCUL00068 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:10.932" level="INFO">UCUL00069: UCUL00069 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:11.134" level="INFO">UCUL00070: UCUL00070 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:11.444" level="INFO">UCUL00071: UCUL00071 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:11.647" level="INFO">UCUL00072: UCUL00072 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:11.841" level="INFO">UCUL00073: UCUL00073 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:12.073" level="INFO">UCUL00074: UCUL00074 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:12.245" level="INFO">UCUL00075: UCUL00075 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:12.429" level="INFO">UCUL00076: UCUL00076 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:12.623" level="INFO">UCUL00077: UCUL00077 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:12.827" level="INFO">UCUL00078: UCUL00078 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:13.028" level="INFO">UCUL00079: UCUL00079 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:13.216" level="INFO">UCUL00080: UCUL00080 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:13.395" level="INFO">UCUL00081: UCUL00081 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:13.559" level="INFO">UCUL00082: UCUL00082 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:13.753" level="INFO">UCUL00083: UCUL00083 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:13.946" level="INFO">UCUL00084: UCUL00084 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:14.163" level="INFO">UCUL00085: UCUL00085 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:14.360" level="INFO">UCUL00086: UCUL00086 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:14.605" level="INFO">UCUL00087: UCUL00087 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:14.807" level="INFO">UCUL00088: UCUL00088 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:14.985" level="INFO">UCUL00089: UCUL00089 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:15.195" level="INFO">UCUL00090: UCUL00090 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:15.388" level="INFO">UCUL00091: UCUL00091 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:15.581" level="INFO">UCUL00092: UCUL00092 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:15.782" level="INFO">UCUL00093: UCUL00093 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:15.960" level="INFO">UCUL00094: UCUL00094 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:16.136" level="INFO">UCUL00095: UCUL00095 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:16.314" level="INFO">UCUL00096: UCUL00096 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:16.491" level="INFO">UCUL00097: UCUL00097 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:16.680" level="INFO">UCUL00098: UCUL00098 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:16.854" level="INFO">UCUL00099: UCUL00099 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:17.037" level="INFO">UCUL00100: UCUL00100 exists in Couchbase Server</msg>
+<msg timestamp="20180629 14:17:17.208" level="INFO">${couchbase_status} = True</msg>
+<status status="PASS" endtime="20180629 14:17:17.209" starttime="20180629 14:16:56.471"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${couchbase_status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>Some item details do not exist in Couchbase Server.</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>All Item and its details are present in Couchbase Server.</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>All Item and its details are present in Couchbase Server.</arg>
+</arguments>
+<status status="PASS" endtime="20180629 14:17:17.211" starttime="20180629 14:17:17.210"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:17:17.211" starttime="20180629 14:17:17.209"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:17:17.212" starttime="20180629 14:16:56.471"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:17:17.212" critical="yes" starttime="20180629 14:16:54.459"></status>
+</test>
+<status status="PASS" endtime="20180629 14:17:17.215" starttime="20180629 14:16:44.406"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testcase" pass="3">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

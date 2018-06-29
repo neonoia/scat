@@ -42,8 +42,7 @@ Get Upload Time
     Set Global Variable             ${time}
 
 Wait Until File Processed
-    Sleep                           10s
-    Wait Until Element Is Enabled   xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a
+    Wait For Condition              return document.getElementById("upload-loader").style.display == "none"        timeout=30s
     Click Element                   xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a
     Page Should Contain             ${time}
 
@@ -58,12 +57,11 @@ Get Columns Data
     Set Global Variable             ${items}
 
 Match Details With Kafka
-    ${messages}                     Get Topic Messages                  SkuCreateRequested      10.99.143.96:9092
-    ${kafka_status}                 Match Kafka Item Details            ${row}      ${col}      ${items}        ${messages}
+    ${kafka_status}                 Match Kafka Item Details            ${row}      ${col}      ${items}        SkuCreateRequested      10.99.143.96:9092
     Run Keyword If                  '${kafka_status}' == 'False'        Log                     Some item details do not exist in Kafka Topic.                  ERROR
-    ...                             ELSE                                Log                     All Item and its details are present in Kafka Topic.
+    ...                             ELSE                                Log To Console          All Item and its details are present in Kafka Topic.
 
 Match Details With Couchbase
     ${couchbase_status}             Match Couchbase Item Details        ${row}      ${col}      ${items}        ${columns}
     Run Keyword If                  '${couchbase_status}' == 'False'    Log                     Some item details do not exist in Couchbase Server.             ERROR
-    ...                             ELSE                                Log                     All Item and its details are present in Couchbase Server.
+    ...                             ELSE                                Log To Console          All Item and its details are present in Couchbase Server.

@@ -50,6 +50,3 @@ class fileParser(object):
         '''
         data = fileParser().read_file(filename)
         return(data.values.tolist())
-
-# k = fileParser().get_list_of_items("../files/SKU.xlsx")
-# print(k)

@@ -5,6 +5,7 @@ from robot.api import logger
 
 def success(item):
     info = item + " exists in Couchbase Server"
+    logger.console(info)
     logger.info(info)
 
 def fail(item):
@@ -31,51 +32,52 @@ def match_couchbase_item_details(row, col, items, column_names):
             sku = items[i][0]
             key_name = column_names[j]
             check = items[i][j]
-            
             results = []
+            found = False       # set the flag
 
-            key_name = str(key_name)
-            key_name = key_name.lower()
+            while not found:
 
-            if (sku == check):
-                q = "SELECT * FROM `item` WHERE code='" + str(sku) + "'"
+                key_name = str(key_name)
+                key_name = key_name.lower()
 
-            elif ("package" in key_name) or ("inner" in key_name) or ("outer" in key_name):
-                # Example querying nested object:
-                # SELECT * FROM `item` WHERE code='QRTS00001' and size.`inner`.length=300
+                if (sku == check):
+                    q = "SELECT * FROM `item` WHERE code='" + str(sku) + "'"
 
-                key_parse = key_name.split(" ")
+                elif ("package" in key_name) or ("inner" in key_name) or ("outer" in key_name):
+                    # Example querying nested object:
+                    # SELECT * FROM `item` WHERE code='QRTS00001' and size.`inner`.length=300
 
-                if "category" in key_parse[1]:
-                    key_parse[1] = "size_" + key_parse[1]
-                    check = "'" + str(check) + "'"
+                    key_parse = key_name.split(" ")
 
-                if ("inner" in key_name) or ("outer" in key_name):
-                    q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND size.`" + str(key_parse[0]) + "`." + str(key_parse[1]) + "=" + str(check)
+                    if "category" in key_parse[1]:
+                        key_parse[1] = "size_" + key_parse[1]
+                        check = "'" + str(check) + "'"
+
+                    if ("inner" in key_name) or ("outer" in key_name):
+                        q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND size.`" + str(key_parse[0]) + "`." + str(key_parse[1]) + "=" + str(check)
+                    else:
+                        key_parse[0] += "s"
+                        q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND size.`" + str(key_parse[0]) + "`." + str(key_parse[1]) + "=" + str(check)
+                    
                 else:
-                    key_parse[0] += "s"
-                    q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND size.`" + str(key_parse[0]) + "`." + str(key_parse[1]) + "=" + str(check)
-                
-            else:
-                # Handle different column names
-                if ("full/part" in key_name):
-                    key_name = "type"
-                    check = check.lower()
-                if ("handling list" in key_name):
-                    key_name = "handling_list"
+                    # Handle different column names
+                    if ("full/part" in key_name):
+                        key_name = "type"
+                        check = check.lower()
+                    if ("handling list" in key_name):
+                        key_name = "handling_list"
 
-                # Query with its primary key
-                q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND " + str(key_name) + "='" + str(check) + "'"
+                    # Query with its primary key
+                    q = "SELECT * FROM `item` WHERE code='" + str(sku) + "' AND " + str(key_name) + "='" + str(check) + "'"
 
-            query = N1QLQuery(q)
-            for row in cb.n1ql_query(query):
-                results.append(row)
+                query = N1QLQuery(q)
+                for row in cb.n1ql_query(query):
+                    results.append(row)
 
-            temp_msg = str(sku) + ": " + str(check)
-            if (len(results) == 0):
-                fail(temp_msg)
-                return False
-            else:
-                success(temp_msg)
+                temp_msg = str(sku) + ": " + str(check)
+                if (len(results) > 0):
+                    found = True
+                    if (j == 0):
+                        success(temp_msg)
                 
     return True
