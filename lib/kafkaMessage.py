@@ -1,5 +1,6 @@
 from confluent_kafka import Consumer, KafkaError
 from robot.api import logger
+import time
 
 def success(item):
     info = item + " exists in Kafka Topic"
@@ -56,6 +57,7 @@ def match_kafka_item_details(row, col, items, topics, server):
     present in kafka messages or not.
     '''
 
+    timeout = time.time() + 60
     kafka = get_topic_messages(topics,server)
 
     for i in range (row):
@@ -80,5 +82,10 @@ def match_kafka_item_details(row, col, items, topics, server):
                     if not found:
                         # refetch messages
                         kafka = get_topic_messages(topics,server)
+
+                    if time.time() > timeout:
+                        # error message
+                        fail(item)
+                        break
 
     return True

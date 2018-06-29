@@ -2,6 +2,7 @@ from couchbase.cluster import Cluster
 from couchbase.cluster import PasswordAuthenticator
 from couchbase.n1ql import N1QLQuery
 from robot.api import logger
+import time
 
 def success(item):
     info = item + " exists in Couchbase Server"
@@ -20,6 +21,8 @@ def match_couchbase_item_details(row, col, items, column_names):
     Returns boolean value whether the specified N1QL query found result or not,
     and log its result whether error occurs or not.
     '''
+    
+    timeout = time.time() + 60
 
     cluster = Cluster('couchbase://10.99.143.96:8091')
     authenticator = PasswordAuthenticator('Administrator', 'password')
@@ -79,5 +82,10 @@ def match_couchbase_item_details(row, col, items, column_names):
                     found = True
                     if (j == 0):
                         success(temp_msg)
+
+                if time.time() > timeout:
+                    # error message
+                    fail(item)
+                    break
                 
     return True

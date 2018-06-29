@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180629 15:49:54.394" generator="Robot 3.0.4 (Python 2.7.12 on linux2)">
+<suite source="/home/budiman/Documents/automation-supply-chain/testcases/testcase.robot" id="s1" name="Testcase">
+<test id="s1-t1" name="Preparation">
+<kw name="Preparation browser" library="preparation">
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${browser name}'=='Chrome' and '${headless}'=='TRUE'</arg>
+<arg>Chrome headless</arg>
+<arg>ELSE IF</arg>
+<arg>'${browser name}'=='Chrome' and '${headless}'=='FALSE'</arg>
+<arg>Create Webdriver</arg>
+<arg>Chrome</arg>
+<arg>ELSE IF</arg>
+<arg>'${browser name}'=='Safari' and '${headless}'=='FALSE'</arg>
+<arg>Create Webdriver</arg>
+<arg>Safari</arg>
+</arguments>
+<kw name="Chrome headless" library="preparation">
+<kw name="Set Chrome Options" library="preparation">
+<doc>Set Chrome options for headless mode</doc>
+<assign>
+<var>${chrome_options}</var>
+</assign>
+<kw name="Evaluate" library="BuiltIn">
+<doc>Evaluates the given expression in Python and returns the results.</doc>
+<arguments>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+</arguments>
+<assign>
+<var>${options}</var>
+</assign>
+<msg timestamp="20180629 15:49:54.660" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fd8f523b410&gt;</msg>
+<status status="PASS" endtime="20180629 15:49:54.660" starttime="20180629 15:49:54.660"></status>
+</kw>
+<kw type="for" name="${option} IN [ @{chrome_arguments} ]">
+<kw type="foritem" name="${option} = --disable-infobars">
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+</arguments>
+<status status="PASS" endtime="20180629 15:49:54.661" starttime="20180629 15:49:54.661"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:54.661" starttime="20180629 15:49:54.660"></status>
+</kw>
+<kw type="foritem" name="${option} = --headless">
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+</arguments>
+<status status="PASS" endtime="20180629 15:49:54.661" starttime="20180629 15:49:54.661"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:54.661" starttime="20180629 15:49:54.661"></status>
+</kw>
+<kw type="foritem" name="${option} = --disable-gpu">
+<kw name="Call Method" library="BuiltIn">
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<arguments>
+<arg>${options}</arg>
+<arg>add_argument</arg>
+<arg>${option}</arg>
+</arguments>
+<status status="PASS" endtime="20180629 15:49:54.661" starttime="20180629 15:49:54.661"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:54.662" starttime="20180629 15:49:54.661"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:54.662" starttime="20180629 15:49:54.660"></status>
+</kw>
+<msg timestamp="20180629 15:49:54.662" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x7fd8f523b410&gt;</msg>
+<status status="PASS" endtime="20180629 15:49:54.662" starttime="20180629 15:49:54.660"></status>
+</kw>
+<kw name="Create Webdriver" library="Selenium2Library">
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<arguments>
+<arg>Chrome</arg>
+<arg>chrome_options=${chrome_options}</arg>
+</arguments>
+<msg timestamp="20180629 15:49:54.662" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" endtime="20180629 15:49:55.826" starttime="20180629 15:49:54.662"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:55.827" starttime="20180629 15:49:54.660"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:55.827" starttime="20180629 15:49:54.659"></status>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<arguments>
+<arg>30 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180629 15:49:55.828" starttime="20180629 15:49:55.827"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<arguments>
+<arg>0.5 seconds</arg>
+</arguments>
+<status status="PASS" endtime="20180629 15:49:55.828" starttime="20180629 15:49:55.828"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:55.828" starttime="20180629 15:49:54.659"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:49:55.829" critical="yes" starttime="20180629 15:49:54.658"></status>
+</test>
+<test id="s1-t2" name="SPLY-01">
+<kw name="Open Browser to Upload File">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://10.99.143.80:8080/</arg>
+</arguments>
+<msg timestamp="20180629 15:49:55.830" level="INFO">Opening url 'http://10.99.143.80:8080/'</msg>
+<status status="PASS" endtime="20180629 15:49:57.410" starttime="20180629 15:49:55.830"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+</arguments>
+<msg timestamp="20180629 15:49:58.449" level="INFO">Current page contains input 'xpath://*[@id="file"]'.</msg>
+<status status="PASS" endtime="20180629 15:49:58.449" starttime="20180629 15:49:57.410"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+<arg>${filename}</arg>
+</arguments>
+<status status="PASS" endtime="20180629 15:49:59.494" starttime="20180629 15:49:58.449"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180629 15:50:01.038" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;&lt;head&gt;
+    
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+
+    &lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /&gt;
+    &lt;meta name="viewport" /&gt;
+
+    
+    &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" /&gt;
+    &lt;link href="/assets/css/template.css?r=0.1.0" rel="stylesheet" /&gt;
+
+    
+    &lt;link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" /&gt;
+
+    &lt;title&gt;Index Page - Supply Chain Web&lt;/title&gt;
+    
+    
+    &lt;script src="http://code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+&lt;div id="upload-loader" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content" style="width: 200px;"&gt;
+            &lt;div class="progress"&gt;
+                &lt;div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    
+    &lt;nav class="navbar navbar-expand-lg navbar-dark navigation-bar"&gt;
+        &lt;a class="navbar-brand navbar-title" href="#"&gt;RUMA Logistics&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarText"&gt;
+            &lt;ul class="navbar-nav mr-auto"&gt;
+                
+            &lt;/ul&gt;
+            &lt;span class="navbar-user"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-sm-2 sidebar"&gt;Tejo&lt;/div&gt;
+                    &lt;div class="col-sm-2 navbar-title"&gt;&lt;img src="../../assets/img/caret-down.png" /&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="container-fluid content"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-3"&gt;
+                &lt;div class="container-fluid sidebar"&gt;
+                    &lt;ul class="navbar-nav mr-auto"&gt;
+                        &lt;li class="nav-item sidebar-title"&gt;
+                            &lt;span class="nav-link"&gt;&lt;b&gt;SKU&lt;/b&gt;&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link active-link" href="upload-file"&gt;Upload file SKU&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="history"&gt;History upload&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-title-center"&gt;
+                            &lt;a class="nav-link"&gt;&lt;b&gt;INVENTORY&lt;/b&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="#"&gt;Lorem ipsum&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-7"&gt;
+                &lt;div class="container-fluid"&gt;
+                    &lt;div id="upload-view"&gt;
+    &lt;div class="row sc-ads pt-2" id="upload-view"&gt;
+        &lt;div class="col-sm-5"&gt;
+           &lt;div class="container download-ads"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="text-center"&gt;Pastikan &lt;b&gt;file SKU yang akan diupload sesuai template SKU&lt;/b&gt; yang diberikan. &lt;br /&gt;Belum ada SKU template?&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;div class="container-fluid"&gt;
+                &lt;a href="/assets/TemplateUploadSKU.xlsx" class="download-ads" download=""&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-sm-2"&gt;
+                            &lt;span class="sc-download"&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="col-sm-10"&gt;
+                            &lt;p&gt;&lt;b class="text-green"&gt;Download&lt;/b&gt;&lt;br /&gt; &lt;b class="text-black"&gt;SKU Registration Template.csv&lt;/b&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+
+        &lt;div class="col-sm-9"&gt;
+            &lt;form id="upload-form" class="form-inline" enctype="multipart/form-data"&gt;
+                &lt;div class="container mt-3 mb-3"&gt;
+                    &lt;b&gt;&lt;label class="text-center sc-title"&gt;UPLOAD FILE SKU&lt;/label&gt;&lt;/b&gt;
+                &lt;/div&gt;
+
+            &lt;div class="custom-file"&gt;
+                &lt;input accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file" type="file" class="custom-file-input" id="file" required="" /&gt;
+                &lt;label id="custom-file-label" class="custom-file-label" for="file"&gt;SKU.xlsx&lt;/label&gt;
+
+            &lt;/div&gt;
+
+                &lt;button id="myButton" class="btn btn-primary btn-block mt-3" type="submit" name="myButton"&gt;UPLOAD&lt;/button&gt;
+
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-success" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title"&gt;&lt;b&gt;Upload File SKU Sukses!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="container content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;File Anda sedang diproses.&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;Cek history upload&lt;/b&gt; untuk memeriksa status file Anda.&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-fail" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist-red"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title-red"&gt;&lt;b&gt;Upload File SKU Gagal!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="upload-fail-content" class="container"&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error-logic" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;File Anda tidak bisa diproses. &lt;b&gt;Seluruh SKU belum terupload.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Perbaiki file SKU dan &lt;b&gt;upload ulang seluruh isi file.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row content-content"&gt;
+            &lt;div id="table-content" class="col"&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Terdapat kesalahan sistem, &lt;b&gt;mohon mencoba kembali.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Jika masih gagal, &lt;b&gt;mohon hubungi Tim IT.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+    function getFilename() {
+        var fieldVal = document.getElementById("file").value;
+        var label = document.getElementById("custom-file-label");
+        
+        fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+
+        if (fieldVal !== undefined || fieldVal !== "") {
+            label.innerHTML = fieldVal;
+        }
+    }
+&lt;/script&gt;
+&lt;script type="text/javascript" src="/assets/js/upload.js"&gt;&lt;/script&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-2"&gt;
+                &lt;div class="container-fluid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20180629 15:50:02.062" level="INFO">Current page contains button 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180629 15:50:02.063" starttime="20180629 15:49:59.494"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180629 15:50:02.064" level="INFO">Clicking element 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180629 15:50:03.139" starttime="20180629 15:50:02.063"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:50:03.139" starttime="20180629 15:49:55.830"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:50:03.139" critical="yes" starttime="20180629 15:49:55.829"></status>
+</test>
+<test id="s1-t3" name="SPLY-02">
+<kw name="Get Upload Time">
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.143" level="INFO">${day} = 29</msg>
+<status status="PASS" endtime="20180629 15:50:03.143" starttime="20180629 15:50:03.143"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>month</arg>
+</arguments>
+<assign>
+<var>${month}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.144" level="INFO">${month} = 06</msg>
+<status status="PASS" endtime="20180629 15:50:03.144" starttime="20180629 15:50:03.144"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>year</arg>
+</arguments>
+<assign>
+<var>${year}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.144" level="INFO">${year} = 2018</msg>
+<status status="PASS" endtime="20180629 15:50:03.144" starttime="20180629 15:50:03.144"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>hour</arg>
+</arguments>
+<assign>
+<var>${hour}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.145" level="INFO">${hour} = 15</msg>
+<status status="PASS" endtime="20180629 15:50:03.145" starttime="20180629 15:50:03.144"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>min</arg>
+</arguments>
+<assign>
+<var>${min}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.145" level="INFO">${min} = 50</msg>
+<status status="PASS" endtime="20180629 15:50:03.145" starttime="20180629 15:50:03.145"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=-</arg>
+<arg>${day}</arg>
+<arg>${month}</arg>
+<arg>${year}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.146" level="INFO">${date} = 29-06-2018</msg>
+<status status="PASS" endtime="20180629 15:50:03.146" starttime="20180629 15:50:03.145"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=:</arg>
+<arg>${hour}</arg>
+<arg>${min}</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.146" level="INFO">${day} = 15:50</msg>
+<status status="PASS" endtime="20180629 15:50:03.146" starttime="20180629 15:50:03.146"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180629 15:50:03.146" level="INFO">${time} = 29-06-2018 15:50</msg>
+<status status="PASS" endtime="20180629 15:50:03.147" starttime="20180629 15:50:03.146"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180629 15:50:03.147" level="INFO">${time} = 29-06-2018 15:50</msg>
+<status status="PASS" endtime="20180629 15:50:03.147" starttime="20180629 15:50:03.147"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:50:03.147" starttime="20180629 15:50:03.142"></status>
+</kw>
+<kw name="Wait Until File Processed">
+<kw name="Wait For Condition" library="Selenium2Library">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.getElementById("upload-loader").style.display == "none"</arg>
+<arg>timeout=30s</arg>
+</arguments>
+<status status="PASS" endtime="20180629 15:50:05.782" starttime="20180629 15:50:03.147"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20180629 15:50:05.783" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20180629 15:50:07.452" starttime="20180629 15:50:05.782"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180629 15:51:09.577" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;&lt;head&gt;
+    
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+
+    &lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /&gt;
+    &lt;meta name="viewport" /&gt;
+
+    
+    &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" /&gt;
+    &lt;link href="/assets/css/template.css?r=0.1.0" rel="stylesheet" /&gt;
+
+    
+    &lt;link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" /&gt;
+
+    &lt;title&gt;History Page - Supply Chain Web&lt;/title&gt;
+    
+    
+    &lt;script src="http://code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+&lt;div id="upload-loader" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content" style="width: 200px;"&gt;
+            &lt;div class="progress"&gt;
+                &lt;div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    
+    &lt;nav class="navbar navbar-expand-lg navbar-dark navigation-bar"&gt;
+        &lt;a class="navbar-brand navbar-title" href="#"&gt;RUMA Logistics&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarText"&gt;
+            &lt;ul class="navbar-nav mr-auto"&gt;
+                
+            &lt;/ul&gt;
+            &lt;span class="navbar-user"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-sm-2 sidebar"&gt;Tejo&lt;/div&gt;
+                    &lt;div class="col-sm-2 navbar-title"&gt;&lt;img src="../../assets/img/caret-down.png" /&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="container-fluid content"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-3"&gt;
+                &lt;div class="container-fluid sidebar"&gt;
+                    &lt;ul class="navbar-nav mr-auto"&gt;
+                        &lt;li class="nav-item sidebar-title"&gt;
+                            &lt;span class="nav-link"&gt;&lt;b&gt;SKU&lt;/b&gt;&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="upload-file"&gt;Upload file SKU&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link active-link" href="history"&gt;History upload&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-title-center"&gt;
+                            &lt;a class="nav-link"&gt;&lt;b&gt;INVENTORY&lt;/b&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="#"&gt;Lorem ipsum&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-7"&gt;
+                &lt;div class="container-fluid"&gt;
+                    &lt;div class="row"&gt;
+    &lt;div class="content-title"&gt;
+        &lt;h3&gt;&lt;b&gt;HISTORY UPLOAD&lt;/b&gt;&lt;/h3&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;span class="span-center"&gt;Harap &lt;i&gt;&lt;b&gt;refresh&lt;/b&gt;&lt;/i&gt; halaman untuk info status terbaru&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col content-content"&gt;
+        &lt;table class="table table-bordered table-center"&gt;
+            &lt;thead class="table-head"&gt;
+            &lt;tr&gt;
+                &lt;th scope="col"&gt;Tanggal&lt;/th&gt;
+                &lt;th scope="col"&gt;File SKU&lt;/th&gt;
+                &lt;th scope="col"&gt;Status&lt;/th&gt;
+            &lt;/tr&gt;
+            &lt;/thead&gt;
+            &lt;tbody&gt;
+                
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 15:39:16&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:15:39:14.xlsx"&gt;SKU-2018-06-29:15:39:14.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 15:32:12&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:15:32:04.xlsx"&gt;SKU-2018-06-29:15:32:04.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 15:30:23&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:15:30:16.xlsx"&gt;SKU-2018-06-29:15:30:16.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 14:40:08&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:14:39:56.xlsx"&gt;SKU-2018-06-29:14:39:56.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 14:31:38&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:14:31:36.xlsx"&gt;SKU-2018-06-29:14:31:36.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 14:16:53&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:14:16:51.xlsx"&gt;SKU-2018-06-29:14:16:51.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 14:12:16&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:14:12:14.xlsx"&gt;SKU-2018-06-29:14:12:14.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 13:50:04&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:13:50:02.xlsx"&gt;SKU-2018-06-29:13:50:02.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 13:48:46&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:13:48:44.xlsx"&gt;SKU-2018-06-29:13:48:44.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 11:30:33&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:11:30:31.xlsx"&gt;SKU-2018-06-29:11:30:31.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 11:26:57&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:11:26:54.xlsx"&gt;SKU-2018-06-29:11:26:54.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 11:11:52&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:11:11:40.xlsx"&gt;SKU-2018-06-29:11:11:40.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 10:59:59&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:10:59:47.xlsx"&gt;SKU-2018-06-29:10:59:47.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 10:17:58&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:10:17:51.xlsx"&gt;SKU-2018-06-29:10:17:51.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;29-06-2018 09:46:54&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-29:09:46:45.xlsx"&gt;SKU-2018-06-29:09:46:45.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 18:10:37&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:18:10:35.xlsx"&gt;SKU-2018-06-28:18:10:35.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 14:23:40&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (3)-2018-06-28:14:23:38.xlsx"&gt;TemplateUploadSKU (3)-2018-06-28:14:23:38.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 11:05:06&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:11:05:05.xlsx"&gt;SKU-2018-06-28:11:05:05.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 11:04:01&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:11:03:59.xlsx"&gt;SKU-2018-06-28:11:03:59.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 11:01:43&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:11:01:37.xlsx"&gt;SKU-2018-06-28:11:01:37.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 11:00:16&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:11:00:04.xlsx"&gt;SKU-2018-06-28:11:00:04.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:58:27&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:58:26.xlsx"&gt;SKU-2018-06-28:10:58:26.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:57:16&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:57:14.xlsx"&gt;SKU-2018-06-28:10:57:14.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:55:33&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:55:32.xlsx"&gt;SKU-2018-06-28:10:55:32.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:53:25&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:53:23.xlsx"&gt;SKU-2018-06-28:10:53:23.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:51:44&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:51:43.xlsx"&gt;SKU-2018-06-28:10:51:43.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:48:23&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:48:15.xlsx"&gt;SKU-2018-06-28:10:48:15.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:42:00&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:41:58.xlsx"&gt;SKU-2018-06-28:10:41:58.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:38:46&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:38:40.xlsx"&gt;SKU-2018-06-28:10:38:40.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:37:11&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:37:09.xlsx"&gt;SKU-2018-06-28:10:37:09.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:35:55&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:35:48.xlsx"&gt;SKU-2018-06-28:10:35:48.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:29:40&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:29:39.xlsx"&gt;SKU-2018-06-28:10:29:39.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:26:33&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:26:31.xlsx"&gt;SKU-2018-06-28:10:26:31.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:15:29&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:15:28.xlsx"&gt;SKU-2018-06-28:10:15:28.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;28-06-2018 10:01:21&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-28:10:01:17.xlsx"&gt;SKU-2018-06-28:10:01:17.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:55:56&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:55:54.xlsx"&gt;SKU-2018-06-26:18:55:54.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:51:17&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:51:16.xlsx"&gt;SKU-2018-06-26:18:51:16.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:25:22&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:25:20.xlsx"&gt;SKU-2018-06-26:18:25:20.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:14:05&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:14:03.xlsx"&gt;SKU-2018-06-26:18:14:03.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:12:13&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:12:12.xlsx"&gt;SKU-2018-06-26:18:12:12.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:09:55&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:09:53.xlsx"&gt;SKU-2018-06-26:18:09:53.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:07:46&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:07:45.xlsx"&gt;SKU-2018-06-26:18:07:45.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 18:06:18&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:18:06:15.xlsx"&gt;SKU-2018-06-26:18:06:15.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 17:55:08&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:17:55:07.xlsx"&gt;SKU-2018-06-26:17:55:07.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 17:53:52&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:17:53:50.xlsx"&gt;SKU-2018-06-26:17:53:50.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;26-06-2018 13:04:23&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-26:13:04:20.xlsx"&gt;SKU-2018-06-26:13:04:20.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;25-06-2018 15:48:42&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-25:15:48:39.xlsx"&gt;SKU-2018-06-25:15:48:39.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;21-06-2018 14:49:01&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-21:14:48:59.xlsx"&gt;SKU-2018-06-21:14:48:59.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;21-06-2018 14:16:30&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/testUpload-2018-06-21:14:16:16.xlsx"&gt;testUpload-2018-06-21:14:16:16.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;21-06-2018 14:14:04&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/testUpload-2018-06-21:14:14:01.xlsx"&gt;testUpload-2018-06-21:14:14:01.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;21-06-2018 11:18:14&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-21:11:18:12.xlsx"&gt;SKU-2018-06-21:11:18:12.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;21-06-2018 10:23:39&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-21:10:23:36.xlsx"&gt;SKU-2018-06-21:10:23:36.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;21-06-2018 10:20:53&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-21:10:20:19.xlsx"&gt;SKU-2018-06-21:10:20:19.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;21-06-2018 10:09:21&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-21:10:09:09.xlsx"&gt;SKU-2018-06-21:10:09:09.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 17:24:49&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-20:17:24:47.xlsx"&gt;SKU-2018-06-20:17:24:47.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 17:20:50&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/SKU-2018-06-20:17:20:43.xlsx"&gt;SKU-2018-06-20:17:20:43.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:45:59&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:45:57.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:45:57.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:43:28&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:43:27.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:43:27.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:41:08&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:41:06.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:41:06.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:36:09&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:36:07.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:36:07.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:32:24&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:32:22.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:32:22.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:28:36&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:28:35.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:28:35.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:26:40&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:26:39.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:26:39.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:05:34&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:05:33.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:05:33.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 14:00:35&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:14:00:34.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:14:00:34.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 13:58:45&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:13:58:43.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:13:58:43.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;20-06-2018 13:53:52&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU (2)-2018-06-20:13:53:45.xlsx"&gt;TemplateUploadSKU (2)-2018-06-20:13:53:45.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;19-06-2018 17:29:41&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/Test nama file-2018-06-19:17:29:39.xlsx"&gt;Test nama file-2018-06-19:17:29:39.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;19-06-2018 15:36:05&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/Test nama file-2018-06-19:08:36:03.xlsx"&gt;Test nama file-2018-06-19:08:36:03.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                        &lt;tr&gt;
+                            &lt;th scope="row"&gt;19-06-2018 15:21:12&lt;/th&gt;
+                            &lt;th class="table-left"&gt;&lt;a href="https://storage.googleapis.com/supply-chain/TemplateUploadSKU-2018-06-19:08:21:10.xlsx"&gt;TemplateUploadSKU-2018-06-19:08:21:10.xlsx&lt;/a&gt;&lt;/th&gt;
+                            
+                                &lt;th&gt;Selesai diproses&lt;/th&gt;
+                            
+                        &lt;/tr&gt;
+                    
+                
+            &lt;/tbody&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-2"&gt;
+                &lt;div class="container-fluid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180629 15:51:10.150" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20180629 15:51:10.150" starttime="20180629 15:51:09.580"></status>
+</kw>
+<msg timestamp="20180629 15:51:10.152" level="FAIL">Page should have contained text '29-06-2018 15:50' but did not.</msg>
+<status status="FAIL" endtime="20180629 15:51:10.152" starttime="20180629 15:50:07.453"></status>
+</kw>
+<status status="FAIL" endtime="20180629 15:51:10.153" starttime="20180629 15:50:03.147"></status>
+</kw>
+<status status="FAIL" endtime="20180629 15:51:10.153" critical="yes" starttime="20180629 15:50:03.141">Page should have contained text '29-06-2018 15:50' but did not.</status>
+</test>
+<test id="s1-t4" name="SPLY-03">
+<kw name="Get Columns Data">
+<kw name="Get Number Of Columns" library="fileParser">
+<doc>Creates a keyword named "Get Numbers of Columns"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${col}</var>
+</assign>
+<msg timestamp="20180629 15:51:10.188" level="INFO">${col} = 21</msg>
+<status status="PASS" endtime="20180629 15:51:10.188" starttime="20180629 15:51:10.154"></status>
+</kw>
+<kw name="Get Number Of Rows" library="fileParser">
+<doc>Creates a keyword named "Get Number of Rows"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20180629 15:51:10.212" level="INFO">${row} = 100</msg>
+<status status="PASS" endtime="20180629 15:51:10.212" starttime="20180629 15:51:10.188"></status>
+</kw>
+<kw name="Get Column Names" library="fileParser">
+<doc>Creates a keyword named "Get Column Names"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${columns}</var>
+</assign>
+<msg timestamp="20180629 15:51:10.232" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180629 15:51:10.232" starttime="20180629 15:51:10.212"></status>
+</kw>
+<kw name="Get List Of Items" library="fileParser">
+<doc>Creates a keyword named "Get List of Items"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20180629 15:51:10.252" level="INFO">${items} = [[u'ABQY00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180629 15:51:10.252" starttime="20180629 15:51:10.232"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${col}</arg>
+</arguments>
+<msg timestamp="20180629 15:51:10.253" level="INFO">${col} = 21</msg>
+<status status="PASS" endtime="20180629 15:51:10.253" starttime="20180629 15:51:10.253"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<msg timestamp="20180629 15:51:10.253" level="INFO">${row} = 100</msg>
+<status status="PASS" endtime="20180629 15:51:10.253" starttime="20180629 15:51:10.253"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${columns}</arg>
+</arguments>
+<msg timestamp="20180629 15:51:10.253" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180629 15:51:10.254" starttime="20180629 15:51:10.253"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${items}</arg>
+</arguments>
+<msg timestamp="20180629 15:51:10.255" level="INFO">${items} = [[u'ABQY00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180629 15:51:10.255" starttime="20180629 15:51:10.254"></status>
+</kw>
+<status status="PASS" endtime="20180629 15:51:10.255" starttime="20180629 15:51:10.154"></status>
+</kw>
+<kw name="Match Details With Kafka">
+<kw name="Match Kafka Item Details" library="kafkaMessage">
+<doc>Creates a keyword named "Match Item Details"</doc>
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+<arg>${items}</arg>
+<arg>SkuCreateRequested</arg>
+<arg>10.99.143.96:9092</arg>
+</arguments>
+<assign>
+<var>${kafka_status}</var>
+</assign>
+<status status="FAIL" endtime="20180629 15:51:26.309" starttime="20180629 15:51:10.256"></status>
+</kw>
+<status status="FAIL" endtime="20180629 15:51:26.310" starttime="20180629 15:51:10.255"></status>
+</kw>
+<status status="FAIL" endtime="20180629 15:51:26.310" critical="yes" starttime="20180629 15:51:10.154">Execution terminated by signal</status>
+</test>
+<status status="FAIL" endtime="20180629 15:51:26.313" starttime="20180629 15:49:54.395"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="2" pass="2">Critical Tests</stat>
+<stat fail="2" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="2" id="s1" name="Testcase" pass="2">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
