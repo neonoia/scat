@@ -4,12 +4,15 @@ Library     DateTime
 Library     ../lib/fileParser.py
 Library     ../lib/kafkaMessage.py
 Library     ../lib/couchbaseCheck.py
+Resource    preparation.robot
 
 *** Variables ***
 ${filename}        /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
 
 *** Test Cases ***
 # Initialize Browser To Upload
+Preparation
+    Preparation browser
 SPLY-01
     Open Browser To Upload File
 # Check File Upload Status
@@ -24,7 +27,7 @@ SPLY-03
 
 *** Keywords ***
 Open Browser to Upload File
-    Open Browser                    http://10.99.143.80:8080/       browser=chrome
+    Go To                           http://10.99.143.80:8080/
     Page Should Contain Button      xpath://*[@id="file"]
     Choose File                     xpath://*[@id="file"]           ${filename}
     Page Should Contain Button      xpath://*[@id="myButton"]

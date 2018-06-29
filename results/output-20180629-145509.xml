@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180629 14:55:09.509" generator="Robot 3.0.4 (Python 2.7.12 on linux2)">
+<suite source="/home/budiman/Documents/automation-supply-chain/testcases/testcase.robot" id="s1" name="Testcase">
+<test id="s1-t1" name="Preparation">
+<kw name="Preparation browser">
+<msg timestamp="20180629 14:55:09.821" level="FAIL">No keyword with name 'Preparation browser' found. Did you mean:
+    preparation.Prepreration Browser</msg>
+<status status="FAIL" endtime="20180629 14:55:09.821" starttime="20180629 14:55:09.821"></status>
+</kw>
+<status status="FAIL" endtime="20180629 14:55:09.821" critical="yes" starttime="20180629 14:55:09.816">No keyword with name 'Preparation browser' found. Did you mean:
+    preparation.Prepreration Browser</status>
+</test>
+<test id="s1-t2" name="SPLY-01">
+<kw name="Open Browser to Upload File">
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the active browser instance to the provided ``url``.</doc>
+<arguments>
+<arg>http://10.99.143.80:8080/</arg>
+</arguments>
+<msg timestamp="20180629 14:55:09.822" level="INFO">Opening url 'http://10.99.143.80:8080/'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180629 14:55:09.823" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" endtime="20180629 14:55:09.823" starttime="20180629 14:55:09.822"></status>
+</kw>
+<msg timestamp="20180629 14:55:09.859" level="FAIL">No browser is open.</msg>
+<status status="FAIL" endtime="20180629 14:55:09.860" starttime="20180629 14:55:09.822"></status>
+</kw>
+<status status="FAIL" endtime="20180629 14:55:09.860" starttime="20180629 14:55:09.822"></status>
+</kw>
+<status status="FAIL" endtime="20180629 14:55:09.860" critical="yes" starttime="20180629 14:55:09.821">No browser is open.</status>
+</test>
+<test id="s1-t3" name="SPLY-02">
+<kw name="Get Upload Time">
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.862" level="INFO">${day} = 29</msg>
+<status status="PASS" endtime="20180629 14:55:09.862" starttime="20180629 14:55:09.862"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>month</arg>
+</arguments>
+<assign>
+<var>${month}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.863" level="INFO">${month} = 06</msg>
+<status status="PASS" endtime="20180629 14:55:09.863" starttime="20180629 14:55:09.862"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>year</arg>
+</arguments>
+<assign>
+<var>${year}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.863" level="INFO">${year} = 2018</msg>
+<status status="PASS" endtime="20180629 14:55:09.863" starttime="20180629 14:55:09.863"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>hour</arg>
+</arguments>
+<assign>
+<var>${hour}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.864" level="INFO">${hour} = 14</msg>
+<status status="PASS" endtime="20180629 14:55:09.864" starttime="20180629 14:55:09.864"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>min</arg>
+</arguments>
+<assign>
+<var>${min}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.865" level="INFO">${min} = 55</msg>
+<status status="PASS" endtime="20180629 14:55:09.865" starttime="20180629 14:55:09.864"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=-</arg>
+<arg>${day}</arg>
+<arg>${month}</arg>
+<arg>${year}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.866" level="INFO">${date} = 29-06-2018</msg>
+<status status="PASS" endtime="20180629 14:55:09.866" starttime="20180629 14:55:09.865"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=:</arg>
+<arg>${hour}</arg>
+<arg>${min}</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.867" level="INFO">${day} = 14:55</msg>
+<status status="PASS" endtime="20180629 14:55:09.867" starttime="20180629 14:55:09.866"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.868" level="INFO">${time} = 29-06-2018 14:55</msg>
+<status status="PASS" endtime="20180629 14:55:09.868" starttime="20180629 14:55:09.867"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180629 14:55:09.869" level="INFO">${time} = 29-06-2018 14:55</msg>
+<status status="PASS" endtime="20180629 14:55:09.869" starttime="20180629 14:55:09.868"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:55:09.869" starttime="20180629 14:55:09.861"></status>
+</kw>
+<kw name="Wait Until File Processed">
+<kw name="Wait For Condition" library="Selenium2Library">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.getElementById("upload-loader").style.display == "none"</arg>
+<arg>timeout=30s</arg>
+</arguments>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes screenshot of the current page and embeds it into log file.</doc>
+<msg timestamp="20180629 14:55:09.873" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<status status="PASS" endtime="20180629 14:55:09.873" starttime="20180629 14:55:09.872"></status>
+</kw>
+<msg timestamp="20180629 14:55:09.874" level="FAIL">No browser is open.</msg>
+<status status="FAIL" endtime="20180629 14:55:09.874" starttime="20180629 14:55:09.870"></status>
+</kw>
+<status status="FAIL" endtime="20180629 14:55:09.875" starttime="20180629 14:55:09.869"></status>
+</kw>
+<status status="FAIL" endtime="20180629 14:55:09.875" critical="yes" starttime="20180629 14:55:09.861">No browser is open.</status>
+</test>
+<test id="s1-t4" name="SPLY-03">
+<kw name="Get Columns Data">
+<kw name="Get Number Of Columns" library="fileParser">
+<doc>Creates a keyword named "Get Numbers of Columns"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${col}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.923" level="INFO">${col} = 21</msg>
+<status status="PASS" endtime="20180629 14:55:09.923" starttime="20180629 14:55:09.878"></status>
+</kw>
+<kw name="Get Number Of Rows" library="fileParser">
+<doc>Creates a keyword named "Get Number of Rows"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${row}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.949" level="INFO">${row} = 100</msg>
+<status status="PASS" endtime="20180629 14:55:09.949" starttime="20180629 14:55:09.923"></status>
+</kw>
+<kw name="Get Column Names" library="fileParser">
+<doc>Creates a keyword named "Get Column Names"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${columns}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.974" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180629 14:55:09.974" starttime="20180629 14:55:09.950"></status>
+</kw>
+<kw name="Get List Of Items" library="fileParser">
+<doc>Creates a keyword named "Get List of Items"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20180629 14:55:09.998" level="INFO">${items} = [[u'UCUL00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180629 14:55:09.998" starttime="20180629 14:55:09.974"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${col}</arg>
+</arguments>
+<msg timestamp="20180629 14:55:09.999" level="INFO">${col} = 21</msg>
+<status status="PASS" endtime="20180629 14:55:09.999" starttime="20180629 14:55:09.998"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${row}</arg>
+</arguments>
+<msg timestamp="20180629 14:55:09.999" level="INFO">${row} = 100</msg>
+<status status="PASS" endtime="20180629 14:55:09.999" starttime="20180629 14:55:09.999"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${columns}</arg>
+</arguments>
+<msg timestamp="20180629 14:55:09.999" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180629 14:55:10.000" starttime="20180629 14:55:09.999"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${items}</arg>
+</arguments>
+<msg timestamp="20180629 14:55:10.001" level="INFO">${items} = [[u'UCUL00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180629 14:55:10.001" starttime="20180629 14:55:10.000"></status>
+</kw>
+<status status="PASS" endtime="20180629 14:55:10.001" starttime="20180629 14:55:09.877"></status>
+</kw>
+<kw name="Match Details With Kafka">
+<kw name="Match Kafka Item Details" library="kafkaMessage">
+<doc>Creates a keyword named "Match Item Details"</doc>
+<arguments>
+<arg>${row}</arg>
+<arg>${col}</arg>
+<arg>${items}</arg>
+<arg>SkuCreateRequested</arg>
+<arg>10.99.143.96:9092</arg>
+</arguments>
+<assign>
+<var>${kafka_status}</var>
+</assign>
+<status status="FAIL" endtime="20180629 14:55:50.234" starttime="20180629 14:55:10.002"></status>
+</kw>
+<status status="FAIL" endtime="20180629 14:55:50.235" starttime="20180629 14:55:10.001"></status>
+</kw>
+<status status="FAIL" endtime="20180629 14:55:50.236" critical="yes" starttime="20180629 14:55:09.876">Execution terminated by signal</status>
+</test>
+<status status="FAIL" endtime="20180629 14:55:50.238" starttime="20180629 14:55:09.510"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="4" pass="0">Critical Tests</stat>
+<stat fail="4" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="4" id="s1" name="Testcase" pass="0">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
