@@ -1,0 +1,730 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180702 18:09:42.751" generator="Robot 3.0.4 (Python 2.7.12 on linux2)">
+<suite source="/home/budiman/Documents/automation-supply-chain/testcases/testcase.robot" id="s1" name="Testcase">
+<test id="s1-t1" name="SPLY-01">
+<kw name="Open Browser to Upload File">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://10.99.143.80:8080/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20180702 18:09:43.012" level="INFO">Opening browser 'chrome' to base url 'http://10.99.143.80:8080/'.</msg>
+<status status="PASS" endtime="20180702 18:09:48.532" starttime="20180702 18:09:43.012"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+</arguments>
+<msg timestamp="20180702 18:09:48.574" level="INFO">Current page contains input 'xpath://*[@id="file"]'.</msg>
+<status status="PASS" endtime="20180702 18:09:48.574" starttime="20180702 18:09:48.533"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+<arg>${filename}</arg>
+</arguments>
+<status status="PASS" endtime="20180702 18:09:48.617" starttime="20180702 18:09:48.575"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180702 18:09:48.658" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;&lt;head&gt;
+    
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+
+    &lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /&gt;
+    &lt;meta name="viewport" /&gt;
+
+    
+    &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" /&gt;
+    &lt;link href="/assets/css/template.css?r=0.1.0" rel="stylesheet" /&gt;
+
+    
+    &lt;link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" /&gt;
+
+    &lt;title&gt;Index Page - Supply Chain Web&lt;/title&gt;
+    
+    
+    &lt;script src="http://code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+&lt;div id="upload-loader" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content" style="width: 200px;"&gt;
+            &lt;div class="progress"&gt;
+                &lt;div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    
+    &lt;nav class="navbar navbar-expand-lg navbar-dark navigation-bar"&gt;
+        &lt;a class="navbar-brand navbar-title" href="#"&gt;RUMA Logistics&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarText"&gt;
+            &lt;ul class="navbar-nav mr-auto"&gt;
+                
+            &lt;/ul&gt;
+            &lt;span class="navbar-user"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-sm-2 sidebar"&gt;Tejo&lt;/div&gt;
+                    &lt;div class="col-sm-2 navbar-title"&gt;&lt;img src="../../assets/img/caret-down.png" /&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="container-fluid content"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-3"&gt;
+                &lt;div class="container-fluid sidebar"&gt;
+                    &lt;ul class="navbar-nav mr-auto"&gt;
+                        &lt;li class="nav-item sidebar-title"&gt;
+                            &lt;span class="nav-link"&gt;&lt;b&gt;SKU&lt;/b&gt;&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link active-link" href="upload-file"&gt;Upload file SKU&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="history"&gt;History upload&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-title-center"&gt;
+                            &lt;a class="nav-link"&gt;&lt;b&gt;INVENTORY&lt;/b&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="#"&gt;Lorem ipsum&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-7"&gt;
+                &lt;div class="container-fluid"&gt;
+                    &lt;div id="upload-view"&gt;
+    &lt;div class="row sc-ads pt-2" id="upload-view"&gt;
+        &lt;div class="col-sm-5"&gt;
+           &lt;div class="container download-ads"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="text-center"&gt;Pastikan &lt;b&gt;file SKU yang akan diupload sesuai template SKU&lt;/b&gt; yang diberikan. &lt;br /&gt;Belum ada SKU template?&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;div class="container-fluid"&gt;
+                &lt;a href="/assets/TemplateUploadSKU.xlsx" class="download-ads" download=""&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-sm-2"&gt;
+                            &lt;span class="sc-download"&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="col-sm-10"&gt;
+                            &lt;p&gt;&lt;b class="text-green"&gt;Download&lt;/b&gt;&lt;br /&gt; &lt;b class="text-black"&gt;SKU Registration Template.csv&lt;/b&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+
+        &lt;div class="col-sm-9"&gt;
+            &lt;form id="upload-form" class="form-inline" enctype="multipart/form-data"&gt;
+                &lt;div class="container mt-3 mb-3"&gt;
+                    &lt;b&gt;&lt;label class="text-center sc-title"&gt;UPLOAD FILE SKU&lt;/label&gt;&lt;/b&gt;
+                &lt;/div&gt;
+
+            &lt;div class="custom-file"&gt;
+                &lt;input accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file" type="file" class="custom-file-input" id="file" required="" /&gt;
+                &lt;label id="custom-file-label" class="custom-file-label" for="file"&gt;SKU.xlsx&lt;/label&gt;
+
+            &lt;/div&gt;
+
+                &lt;button id="myButton" class="btn btn-primary btn-block mt-3" type="submit" name="myButton"&gt;UPLOAD&lt;/button&gt;
+
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-success" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title"&gt;&lt;b&gt;Upload File SKU Sukses!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="container content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;File Anda sedang diproses.&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;Cek history upload&lt;/b&gt; untuk memeriksa status file Anda.&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-fail" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist-red"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title-red"&gt;&lt;b&gt;Upload File SKU Gagal!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="upload-fail-content" class="container"&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error-logic" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;File Anda tidak bisa diproses. &lt;b&gt;Seluruh SKU belum terupload.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Perbaiki file SKU dan &lt;b&gt;upload ulang seluruh isi file.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row content-content"&gt;
+            &lt;div id="table-content" class="col"&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Terdapat kesalahan sistem, &lt;b&gt;mohon mencoba kembali.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Jika masih gagal, &lt;b&gt;mohon hubungi Tim IT.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+    function getFilename() {
+        var fieldVal = document.getElementById("file").value;
+        var label = document.getElementById("custom-file-label");
+        
+        fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+
+        if (fieldVal !== undefined || fieldVal !== "") {
+            label.innerHTML = fieldVal;
+        }
+    }
+&lt;/script&gt;
+&lt;script type="text/javascript" src="/assets/js/upload.js"&gt;&lt;/script&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-2"&gt;
+                &lt;div class="container-fluid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20180702 18:09:48.676" level="INFO">Current page contains button 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180702 18:09:48.677" starttime="20180702 18:09:48.617"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180702 18:09:48.677" level="INFO">Clicking element 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180702 18:09:48.766" starttime="20180702 18:09:48.677"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:48.766" starttime="20180702 18:09:43.012"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:48.766" critical="yes" starttime="20180702 18:09:43.012"></status>
+</test>
+<test id="s1-t2" name="SPLY-02">
+<kw name="Get Upload Time">
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.768" level="INFO">${day} = 02</msg>
+<status status="PASS" endtime="20180702 18:09:48.769" starttime="20180702 18:09:48.768"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>month</arg>
+</arguments>
+<assign>
+<var>${month}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.769" level="INFO">${month} = 07</msg>
+<status status="PASS" endtime="20180702 18:09:48.769" starttime="20180702 18:09:48.769"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>year</arg>
+</arguments>
+<assign>
+<var>${year}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.769" level="INFO">${year} = 2018</msg>
+<status status="PASS" endtime="20180702 18:09:48.770" starttime="20180702 18:09:48.769"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>hour</arg>
+</arguments>
+<assign>
+<var>${hour}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.770" level="INFO">${hour} = 18</msg>
+<status status="PASS" endtime="20180702 18:09:48.770" starttime="20180702 18:09:48.770"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>min</arg>
+</arguments>
+<assign>
+<var>${min}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.771" level="INFO">${min} = 09</msg>
+<status status="PASS" endtime="20180702 18:09:48.772" starttime="20180702 18:09:48.771"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=-</arg>
+<arg>${day}</arg>
+<arg>${month}</arg>
+<arg>${year}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.773" level="INFO">${date} = 02-07-2018</msg>
+<status status="PASS" endtime="20180702 18:09:48.773" starttime="20180702 18:09:48.772"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=:</arg>
+<arg>${hour}</arg>
+<arg>${min}</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.773" level="INFO">${day} = 18:09</msg>
+<status status="PASS" endtime="20180702 18:09:48.774" starttime="20180702 18:09:48.773"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180702 18:09:48.774" level="INFO">${time} = 02-07-2018 18:09</msg>
+<status status="PASS" endtime="20180702 18:09:48.774" starttime="20180702 18:09:48.774"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180702 18:09:48.774" level="INFO">${time} = 02-07-2018 18:09</msg>
+<status status="PASS" endtime="20180702 18:09:48.775" starttime="20180702 18:09:48.774"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:48.775" starttime="20180702 18:09:48.767"></status>
+</kw>
+<kw name="Wait Until File Processed">
+<kw name="Wait For Condition" library="Selenium2Library">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.getElementById("upload-loader").style.display == "none"</arg>
+<arg>timeout=30s</arg>
+</arguments>
+<status status="PASS" endtime="20180702 18:09:52.135" starttime="20180702 18:09:48.775"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20180702 18:09:52.136" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20180702 18:09:52.374" starttime="20180702 18:09:52.135"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180702 18:09:52.391" level="INFO">Current page contains text '02-07-2018 18:09'.</msg>
+<status status="PASS" endtime="20180702 18:09:52.391" starttime="20180702 18:09:52.374"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:52.391" starttime="20180702 18:09:48.775"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:52.391" critical="yes" starttime="20180702 18:09:48.767"></status>
+</test>
+<test id="s1-t3" name="SPLY-03">
+<kw name="Get Columns Data">
+<kw name="Get Column Names" library="fileParser">
+<doc>Creates a keyword named "Get Column Names"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${columns}</var>
+</assign>
+<msg timestamp="20180702 18:09:52.428" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180702 18:09:52.428" starttime="20180702 18:09:52.393"></status>
+</kw>
+<kw name="Get List Of Items" library="fileParser">
+<doc>Creates a keyword named "Get List of Items"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20180702 18:09:52.451" level="INFO">${items} = [[u'GSQL00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180702 18:09:52.451" starttime="20180702 18:09:52.428"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${columns}</arg>
+</arguments>
+<msg timestamp="20180702 18:09:52.451" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180702 18:09:52.451" starttime="20180702 18:09:52.451"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${items}</arg>
+</arguments>
+<msg timestamp="20180702 18:09:52.453" level="INFO">${items} = [[u'GSQL00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180702 18:09:52.453" starttime="20180702 18:09:52.451"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:52.453" starttime="20180702 18:09:52.392"></status>
+</kw>
+<kw name="Match Details With Kafka">
+<kw name="Match Kafka Item Details" library="kafkaMessage">
+<doc>Creates a keyword named "Match Item Details"</doc>
+<arguments>
+<arg>${items}</arg>
+<arg>SkuCreateRequested</arg>
+<arg>10.99.143.96:9092</arg>
+</arguments>
+<assign>
+<var>${kafka_status}</var>
+</assign>
+<msg timestamp="20180702 18:09:52.922" level="INFO">gsql00001 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.923" level="INFO">gsql00002 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.923" level="INFO">gsql00003 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.924" level="INFO">gsql00004 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.924" level="INFO">gsql00005 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.925" level="INFO">gsql00006 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.925" level="INFO">gsql00007 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.926" level="INFO">gsql00008 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.926" level="INFO">gsql00009 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.926" level="INFO">gsql00010 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.927" level="INFO">gsql00011 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.927" level="INFO">gsql00012 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.928" level="INFO">gsql00013 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.928" level="INFO">gsql00014 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.928" level="INFO">gsql00015 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.928" level="INFO">gsql00016 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.928" level="INFO">gsql00017 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.928" level="INFO">gsql00018 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.928" level="INFO">gsql00019 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00020 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00021 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00022 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00023 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00024 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00025 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00026 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00027 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.929" level="INFO">gsql00028 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00029 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00030 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00031 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00032 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00033 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00034 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00035 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00036 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.930" level="INFO">gsql00037 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00038 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00039 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00040 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00041 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00042 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00043 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00044 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.931" level="INFO">gsql00045 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00046 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00047 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00048 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00049 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00050 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00051 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00052 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.932" level="INFO">gsql00053 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.933" level="INFO">gsql00054 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.933" level="INFO">gsql00055 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.933" level="INFO">gsql00056 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.933" level="INFO">gsql00057 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.933" level="INFO">gsql00058 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.933" level="INFO">gsql00059 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.933" level="INFO">gsql00060 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.934" level="INFO">gsql00061 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.934" level="INFO">gsql00062 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.934" level="INFO">gsql00063 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.934" level="INFO">gsql00064 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.934" level="INFO">gsql00065 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.934" level="INFO">gsql00066 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.935" level="INFO">gsql00067 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.935" level="INFO">gsql00068 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.935" level="INFO">gsql00069 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.935" level="INFO">gsql00070 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.935" level="INFO">gsql00071 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.936" level="INFO">gsql00072 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.936" level="INFO">gsql00073 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.936" level="INFO">gsql00074 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.936" level="INFO">gsql00075 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.936" level="INFO">gsql00076 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.936" level="INFO">gsql00077 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.937" level="INFO">gsql00078 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.937" level="INFO">gsql00079 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.937" level="INFO">gsql00080 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.937" level="INFO">gsql00081 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.937" level="INFO">gsql00082 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.937" level="INFO">gsql00083 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.937" level="INFO">gsql00084 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.938" level="INFO">gsql00085 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.938" level="INFO">gsql00086 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.938" level="INFO">gsql00087 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.938" level="INFO">gsql00088 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.938" level="INFO">gsql00089 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.938" level="INFO">gsql00090 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.939" level="INFO">gsql00091 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.939" level="INFO">gsql00092 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.939" level="INFO">gsql00093 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.939" level="INFO">gsql00094 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.939" level="INFO">gsql00095 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.939" level="INFO">gsql00096 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.940" level="INFO">gsql00097 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.940" level="INFO">gsql00098 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.940" level="INFO">gsql00099 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.940" level="INFO">gsql00100 exists in Kafka Topic</msg>
+<msg timestamp="20180702 18:09:52.940" level="INFO">${kafka_status} = True</msg>
+<status status="PASS" endtime="20180702 18:09:52.940" starttime="20180702 18:09:52.453"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${kafka_status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>Some item details do not exist in Kafka Topic.</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>All Item and its details are present in Kafka Topic.</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>All Item and its details are present in Kafka Topic.</arg>
+</arguments>
+<status status="PASS" endtime="20180702 18:09:52.941" starttime="20180702 18:09:52.941"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:52.941" starttime="20180702 18:09:52.940"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:52.941" starttime="20180702 18:09:52.453"></status>
+</kw>
+<kw name="Match Details With Couchbase">
+<kw name="Match Couchbase Item Details" library="couchbaseCheck">
+<doc>Creates a keyword named "Match Couchbase Item Details"</doc>
+<arguments>
+<arg>${items}</arg>
+<arg>${columns}</arg>
+<arg>10.99.143.96:8091</arg>
+<arg>Administrator</arg>
+<arg>password</arg>
+<arg>item</arg>
+</arguments>
+<assign>
+<var>${couchbase_status}</var>
+</assign>
+<msg timestamp="20180702 18:09:53.105" level="INFO">GSQL00001: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.124" level="INFO">GSQL00002: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.158" level="INFO">GSQL00003: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.173" level="INFO">GSQL00004: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.186" level="INFO">GSQL00005: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.199" level="INFO">GSQL00006: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.212" level="INFO">GSQL00007: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.251" level="INFO">GSQL00008: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.264" level="INFO">GSQL00009: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.278" level="INFO">GSQL00010: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.301" level="INFO">GSQL00011: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.318" level="INFO">GSQL00012: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.333" level="INFO">GSQL00013: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.352" level="INFO">GSQL00014: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.372" level="INFO">GSQL00015: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.385" level="INFO">GSQL00016: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.398" level="INFO">GSQL00017: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.413" level="INFO">GSQL00018: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.435" level="INFO">GSQL00019: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.463" level="INFO">GSQL00020: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.476" level="INFO">GSQL00021: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.489" level="INFO">GSQL00022: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.504" level="INFO">GSQL00023: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.519" level="INFO">GSQL00024: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.538" level="INFO">GSQL00025: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.553" level="INFO">GSQL00026: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.568" level="INFO">GSQL00027: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.580" level="INFO">GSQL00028: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.594" level="INFO">GSQL00029: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.605" level="INFO">GSQL00030: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.627" level="INFO">GSQL00031: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.640" level="INFO">GSQL00032: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.654" level="INFO">GSQL00033: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.670" level="INFO">GSQL00034: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.683" level="INFO">GSQL00035: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.707" level="INFO">GSQL00036: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.719" level="INFO">GSQL00037: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.732" level="INFO">GSQL00038: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.744" level="INFO">GSQL00039: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.761" level="INFO">GSQL00040: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.775" level="INFO">GSQL00041: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.796" level="INFO">GSQL00042: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.822" level="INFO">GSQL00043: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.840" level="INFO">GSQL00044: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.857" level="INFO">GSQL00045: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.870" level="INFO">GSQL00046: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.887" level="INFO">GSQL00047: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.899" level="INFO">GSQL00048: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.926" level="INFO">GSQL00049: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.939" level="INFO">GSQL00050: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.953" level="INFO">GSQL00051: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.970" level="INFO">GSQL00052: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.983" level="INFO">GSQL00053: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:53.996" level="INFO">GSQL00054: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.017" level="INFO">GSQL00055: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.030" level="INFO">GSQL00056: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.045" level="INFO">GSQL00057: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.066" level="INFO">GSQL00058: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.091" level="INFO">GSQL00059: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.104" level="INFO">GSQL00060: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.116" level="INFO">GSQL00061: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.129" level="INFO">GSQL00062: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.152" level="INFO">GSQL00063: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.165" level="INFO">GSQL00064: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.181" level="INFO">GSQL00065: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.195" level="INFO">GSQL00066: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.210" level="INFO">GSQL00067: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.228" level="INFO">GSQL00068: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.252" level="INFO">GSQL00069: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.266" level="INFO">GSQL00070: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.279" level="INFO">GSQL00071: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.294" level="INFO">GSQL00072: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.308" level="INFO">GSQL00073: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.326" level="INFO">GSQL00074: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.337" level="INFO">GSQL00075: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.350" level="INFO">GSQL00076: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.366" level="INFO">GSQL00077: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.382" level="INFO">GSQL00078: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.396" level="INFO">GSQL00079: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.412" level="INFO">GSQL00080: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.425" level="INFO">GSQL00081: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.438" level="INFO">GSQL00082: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.454" level="INFO">GSQL00083: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.481" level="INFO">GSQL00084: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.509" level="INFO">GSQL00085: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.533" level="INFO">GSQL00086: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.555" level="INFO">GSQL00087: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.570" level="INFO">GSQL00088: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.583" level="INFO">GSQL00089: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.596" level="INFO">GSQL00090: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.621" level="INFO">GSQL00091: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.638" level="INFO">GSQL00092: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.652" level="INFO">GSQL00093: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.666" level="INFO">GSQL00094: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.679" level="INFO">GSQL00095: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.694" level="INFO">GSQL00096: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.721" level="INFO">GSQL00097: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.737" level="INFO">GSQL00098: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.751" level="INFO">GSQL00099: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.762" level="INFO">GSQL00100: 'S' exists in Couchbase Server</msg>
+<msg timestamp="20180702 18:09:54.763" level="INFO">${couchbase_status} = True</msg>
+<status status="PASS" endtime="20180702 18:09:54.763" starttime="20180702 18:09:52.941"></status>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<arguments>
+<arg>'${couchbase_status}' == 'False'</arg>
+<arg>Log</arg>
+<arg>Some item details do not exist in Couchbase Server.</arg>
+<arg>ERROR</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>All Item and its details are present in Couchbase Server.</arg>
+</arguments>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>All Item and its details are present in Couchbase Server.</arg>
+</arguments>
+<status status="PASS" endtime="20180702 18:09:54.766" starttime="20180702 18:09:54.765"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:54.766" starttime="20180702 18:09:54.764"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:54.767" starttime="20180702 18:09:52.941"></status>
+</kw>
+<status status="PASS" endtime="20180702 18:09:54.767" critical="yes" starttime="20180702 18:09:52.392"></status>
+</test>
+<status status="PASS" endtime="20180702 18:09:54.771" starttime="20180702 18:09:42.753"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Testcase" pass="3">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

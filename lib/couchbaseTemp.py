@@ -93,10 +93,11 @@ def match_couchbase_item_details(items, column_names, host, username, password, 
             for row in cb.n1ql_query(query):
                 results.append(row)
 
-            temp_msg = str(sku)
+            temp_msg = str(sku) + ": " + str(check)
             if (len(results) > 0):
                 found = True
-                success(temp_msg)
+                if (j == 0):
+                    success(temp_msg)
 
             if time.time() > timeout:
                 # error message
