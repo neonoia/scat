@@ -13,7 +13,21 @@ def fail(item):
     info = item + " does not exist in Couchbase Server"
     logger.error(info)
 
-def match_couchbase_item_details(row, col, items, column_names):
+def connect_to_bucket(host, username, password, bucket):
+    '''
+    This function takes four arguments to connect to bucket.
+    host, username, password and bucket name.
+    Returns connection instance of the specified bucket.
+    '''
+    if "couchbase" not in host:
+        host = "couchbase://" + str(host)
+    cluster = Cluster(host)
+    authenticator = PasswordAuthenticator(username, password)
+    cluster.authenticate(authenticator)
+    cb = cluster.open_bucket(bucket)
+    return cb
+
+def match_couchbase_item_details(items, column_names, host, username, password, bucket):
     '''
     Creates a keyword named "Match Couchbase Item Details"
     This keyword takes four arguments, number of rows and columns in list
@@ -22,15 +36,14 @@ def match_couchbase_item_details(row, col, items, column_names):
     and log its result whether error occurs or not.
     '''
     
-    timeout = time.time() + 60
-
-    cluster = Cluster('couchbase://10.99.143.96:8091')
-    authenticator = PasswordAuthenticator('Administrator', 'password')
-    cluster.authenticate(authenticator)
-    cb = cluster.open_bucket('item')
+    row = len(items)
+    col = len(items[0])
+    
+    cb = connect_to_bucket(host, username, password, bucket)
 
     for i in range(row):
         for j in range(col):
+            timeout = time.time() + 30      # set timeout as 30s
 
             sku = items[i][0]
             key_name = column_names[j]

@@ -10,8 +10,6 @@ Resource    preparation.robot
 ${filename}        /home/budiman/Documents/automation-supply-chain/files/SKU.xlsx
 
 *** Test Cases ***
-Preparation
-    Preparation browser
 SPLY-01
 # Initialize Browser To Upload
     Open Browser To Upload File
@@ -27,7 +25,7 @@ SPLY-03
 
 *** Keywords ***
 Open Browser to Upload File
-    Go To                           http://10.99.143.80:8080/
+    Open Browser                    http://10.99.143.80:8080/       browser=chrome
     Page Should Contain Button      xpath://*[@id="file"]
     Choose File                     xpath://*[@id="file"]           ${filename}
     Page Should Contain Button      xpath://*[@id="myButton"]
@@ -50,21 +48,17 @@ Wait Until File Processed
     Page Should Contain             ${time}
 
 Get Columns Data
-    ${col}                          Get Number of Columns           ${filename}
-    ${row}                          Get Number of Rows              ${filename}
     ${columns}                      Get Column Names                ${filename}
     ${items}                        Get List of Items               ${filename}
-    Set Global Variable             ${col}
-    Set Global Variable             ${row}
     Set Global Variable             ${columns}
     Set Global Variable             ${items}
 
 Match Details With Kafka
-    ${kafka_status}                 Match Kafka Item Details            ${row}      ${col}      ${items}        SkuCreateRequested      10.99.143.96:9092
+    ${kafka_status}                 Match Kafka Item Details            ${items}        SkuCreateRequested      10.99.143.96:9092
     Run Keyword If                  '${kafka_status}' == 'False'        Log                     Some item details do not exist in Kafka Topic.                  ERROR
     ...                             ELSE                                Log To Console          All Item and its details are present in Kafka Topic.
 
 Match Details With Couchbase
-    ${couchbase_status}             Match Couchbase Item Details        ${row}      ${col}      ${items}        ${columns}
+    ${couchbase_status}             Match Couchbase Item Details        ${items}        ${columns}        10.99.143.96:8091         Administrator       password        item
     Run Keyword If                  '${couchbase_status}' == 'False'    Log                     Some item details do not exist in Couchbase Server.             ERROR
     ...                             ELSE                                Log To Console          All Item and its details are present in Couchbase Server.

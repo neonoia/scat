@@ -13,8 +13,8 @@ def fail(item):
 
 def get_topic_messages(topics, server):
     '''
-    This function takes two argument, the topic and the kafka server
-    and returns a list messages inside the topic.
+    This function takes two argument, the topic and the kafka server.
+    Returns a list messages inside the topic.
     '''
 
     settings = {
@@ -49,7 +49,7 @@ def get_topic_messages(topics, server):
 
     return messages
 
-def match_kafka_item_details(row, col, items, topics, server):
+def match_kafka_item_details(items, topics, server):
     '''
     Creates a keyword named "Match Item Details"
     Search the item details in kafka messages list. 
@@ -57,11 +57,14 @@ def match_kafka_item_details(row, col, items, topics, server):
     present in kafka messages or not.
     '''
 
-    timeout = time.time() + 60
     kafka = get_topic_messages(topics,server)
+    
+    row = len(items)
+    col = len(items[0])
 
     for i in range (row):
         for j in range (col):
+            timeout = time.time() + 30   # set timeout as 30s
             
             item = items[i][j]
             if type(item) is not int:
