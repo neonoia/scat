@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180704 13:39:00.783" generator="Robot 3.0.4 (Python 2.7.12 on linux2)">
+<suite source="/home/budiman/Documents/automation-supply-chain/testcases/testcase.robot" id="s1" name="Testcase">
+<test id="s1-t1" name="SPLY-01">
+<kw name="Open Browser to Upload File">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the given ``url``.</doc>
+<arguments>
+<arg>http://10.99.143.80:8080/</arg>
+<arg>browser=chrome</arg>
+</arguments>
+<msg timestamp="20180704 13:39:04.560" level="INFO">Opening browser 'chrome' to base url 'http://10.99.143.80:8080/'.</msg>
+<status status="PASS" endtime="20180704 13:39:09.341" starttime="20180704 13:39:04.560"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+</arguments>
+<msg timestamp="20180704 13:39:09.360" level="INFO">Current page contains input 'xpath://*[@id="file"]'.</msg>
+<status status="PASS" endtime="20180704 13:39:09.361" starttime="20180704 13:39:09.341"></status>
+</kw>
+<kw name="Choose File" library="Selenium2Library">
+<doc>Inputs the ``file_path`` into file input field ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="file"]</arg>
+<arg>${filename}</arg>
+</arguments>
+<status status="PASS" endtime="20180704 13:39:09.385" starttime="20180704 13:39:09.361"></status>
+</kw>
+<kw name="Page Should Contain Button" library="Selenium2Library">
+<doc>Verifies button ``locator`` is found from current page.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180704 13:39:09.409" level="INFO">&lt;!DOCTYPE html&gt;&lt;html xmlns="http://www.w3.org/1999/xhtml" lang="en"&gt;&lt;head&gt;
+    
+    &lt;meta charset="utf-8" /&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /&gt;
+
+    &lt;meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" /&gt;
+    &lt;meta name="viewport" /&gt;
+
+    
+    &lt;link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" /&gt;
+    &lt;link href="/assets/css/template.css?r=0.1.0" rel="stylesheet" /&gt;
+
+    
+    &lt;link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito" /&gt;
+
+    &lt;title&gt;Index Page - Supply Chain Web&lt;/title&gt;
+    
+    
+    &lt;script src="http://code.jquery.com/jquery-1.11.1.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"&gt;&lt;/script&gt;
+    &lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"&gt;&lt;/script&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+
+
+&lt;div id="upload-loader" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1"&gt;
+    &lt;div class="modal-dialog modal-sm"&gt;
+        &lt;div class="modal-content" style="width: 200px;"&gt;
+            &lt;div class="progress"&gt;
+                &lt;div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"&gt;&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    
+    &lt;nav class="navbar navbar-expand-lg navbar-dark navigation-bar"&gt;
+        &lt;a class="navbar-brand navbar-title" href="#"&gt;RUMA Logistics&lt;/a&gt;
+        &lt;button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"&gt;
+            &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+        &lt;/button&gt;
+        &lt;div class="collapse navbar-collapse" id="navbarText"&gt;
+            &lt;ul class="navbar-nav mr-auto"&gt;
+                
+            &lt;/ul&gt;
+            &lt;span class="navbar-user"&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-sm-2 sidebar"&gt;Tejo&lt;/div&gt;
+                    &lt;div class="col-sm-2 navbar-title"&gt;&lt;img src="../../assets/img/caret-down.png" /&gt;&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/nav&gt;
+
+    &lt;div class="container-fluid content"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="col-sm-3"&gt;
+                &lt;div class="container-fluid sidebar"&gt;
+                    &lt;ul class="navbar-nav mr-auto"&gt;
+                        &lt;li class="nav-item sidebar-title"&gt;
+                            &lt;span class="nav-link"&gt;&lt;b&gt;SKU&lt;/b&gt;&lt;/span&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link active-link" href="upload-file"&gt;Upload file SKU&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="history"&gt;History upload&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-title-center"&gt;
+                            &lt;a class="nav-link"&gt;&lt;b&gt;INVENTORY&lt;/b&gt;&lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class="nav-item sidebar-link"&gt;
+                            &lt;a class="nav-link inactive-link" href="#"&gt;Lorem ipsum&lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-7"&gt;
+                &lt;div class="container-fluid"&gt;
+                    &lt;div id="upload-view"&gt;
+    &lt;div class="row sc-ads pt-2" id="upload-view"&gt;
+        &lt;div class="col-sm-5"&gt;
+           &lt;div class="container download-ads"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="text-center"&gt;Pastikan &lt;b&gt;file SKU yang akan diupload sesuai template SKU&lt;/b&gt; yang diberikan. &lt;br /&gt;Belum ada SKU template?&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-7"&gt;
+            &lt;div class="container-fluid"&gt;
+                &lt;a href="/assets/TemplateUploadSKU.xlsx" class="download-ads" download=""&gt;
+                    &lt;div class="row"&gt;
+                        &lt;div class="col-sm-2"&gt;
+                            &lt;span class="sc-download"&gt;&lt;/span&gt;
+                        &lt;/div&gt;
+
+                        &lt;div class="col-sm-10"&gt;
+                            &lt;p&gt;&lt;b class="text-green"&gt;Download&lt;/b&gt;&lt;br /&gt; &lt;b class="text-black"&gt;SKU Registration Template.csv&lt;/b&gt;&lt;/p&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+
+        &lt;div class="col-sm-9"&gt;
+            &lt;form id="upload-form" class="form-inline" enctype="multipart/form-data"&gt;
+                &lt;div class="container mt-3 mb-3"&gt;
+                    &lt;b&gt;&lt;label class="text-center sc-title"&gt;UPLOAD FILE SKU&lt;/label&gt;&lt;/b&gt;
+                &lt;/div&gt;
+
+            &lt;div class="custom-file"&gt;
+                &lt;input accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" name="file" type="file" class="custom-file-input" id="file" required="" /&gt;
+                &lt;label id="custom-file-label" class="custom-file-label" for="file"&gt;SKU.xlsx&lt;/label&gt;
+
+            &lt;/div&gt;
+
+                &lt;button id="myButton" class="btn btn-primary btn-block mt-3" type="submit" name="myButton"&gt;UPLOAD&lt;/button&gt;
+
+            &lt;/form&gt;
+        &lt;/div&gt;
+        &lt;div class="col-sm-2"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-success" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title"&gt;&lt;b&gt;Upload File SKU Sukses!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="container content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;File Anda sedang diproses.&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center"&gt;&lt;b&gt;Cek history upload&lt;/b&gt; untuk memeriksa status file Anda.&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="upload-fail" style="display: none"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="center sc-checklist-red"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="content-content"&gt;
+            &lt;div class="row"&gt;
+                &lt;span class="span-center sc-title-red"&gt;&lt;b&gt;Upload File SKU Gagal!&lt;/b&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div id="upload-fail-content" class="container"&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error-logic" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;File Anda tidak bisa diproses. &lt;b&gt;Seluruh SKU belum terupload.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Perbaiki file SKU dan &lt;b&gt;upload ulang seluruh isi file.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row content-content"&gt;
+            &lt;div id="table-content" class="col"&gt;
+
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div id="upload-error" class="container content-content" style="display: none"&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Terdapat kesalahan sistem, &lt;b&gt;mohon mencoba kembali.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div class="row"&gt;
+            &lt;span class="span-center"&gt;Jika masih gagal, &lt;b&gt;mohon hubungi Tim IT.&lt;/b&gt;&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+    function getFilename() {
+        var fieldVal = document.getElementById("file").value;
+        var label = document.getElementById("custom-file-label");
+        
+        fieldVal = fieldVal.replace("C:\\fakepath\\", "");
+
+        if (fieldVal !== undefined || fieldVal !== "") {
+            label.innerHTML = fieldVal;
+        }
+    }
+&lt;/script&gt;
+&lt;script type="text/javascript" src="/assets/js/upload.js"&gt;&lt;/script&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class="col-sm-2"&gt;
+                &lt;div class="container-fluid"&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/div&gt;
+
+
+&lt;/body&gt;&lt;/html&gt;</msg>
+<msg timestamp="20180704 13:39:09.418" level="INFO">Current page contains button 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180704 13:39:09.418" starttime="20180704 13:39:09.386"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath://*[@id="myButton"]</arg>
+</arguments>
+<msg timestamp="20180704 13:39:09.418" level="INFO">Clicking element 'xpath://*[@id="myButton"]'.</msg>
+<status status="PASS" endtime="20180704 13:39:09.466" starttime="20180704 13:39:09.418"></status>
+</kw>
+<status status="PASS" endtime="20180704 13:39:09.467" starttime="20180704 13:39:04.559"></status>
+</kw>
+<status status="PASS" endtime="20180704 13:39:09.467" critical="yes" starttime="20180704 13:39:04.558"></status>
+</test>
+<test id="s1-t2" name="SPLY-02">
+<kw name="Get Upload Time">
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>day</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.468" level="INFO">${day} = 04</msg>
+<status status="PASS" endtime="20180704 13:39:09.468" starttime="20180704 13:39:09.468"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>month</arg>
+</arguments>
+<assign>
+<var>${month}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.469" level="INFO">${month} = 07</msg>
+<status status="PASS" endtime="20180704 13:39:09.469" starttime="20180704 13:39:09.468"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>year</arg>
+</arguments>
+<assign>
+<var>${year}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.469" level="INFO">${year} = 2018</msg>
+<status status="PASS" endtime="20180704 13:39:09.469" starttime="20180704 13:39:09.469"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>hour</arg>
+</arguments>
+<assign>
+<var>${hour}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.469" level="INFO">${hour} = 13</msg>
+<status status="PASS" endtime="20180704 13:39:09.469" starttime="20180704 13:39:09.469"></status>
+</kw>
+<kw name="Get Time" library="BuiltIn">
+<doc>Returns the given time in the requested format.</doc>
+<arguments>
+<arg>min</arg>
+</arguments>
+<assign>
+<var>${min}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.470" level="INFO">${min} = 39</msg>
+<status status="PASS" endtime="20180704 13:39:09.470" starttime="20180704 13:39:09.469"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=-</arg>
+<arg>${day}</arg>
+<arg>${month}</arg>
+<arg>${year}</arg>
+</arguments>
+<assign>
+<var>${date}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.470" level="INFO">${date} = 04-07-2018</msg>
+<status status="PASS" endtime="20180704 13:39:09.470" starttime="20180704 13:39:09.470"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>SEPARATOR=:</arg>
+<arg>${hour}</arg>
+<arg>${min}</arg>
+</arguments>
+<assign>
+<var>${day}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.472" level="INFO">${day} = 13:39</msg>
+<status status="PASS" endtime="20180704 13:39:09.472" starttime="20180704 13:39:09.471"></status>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<arguments>
+<arg>${date}</arg>
+<arg>${day}</arg>
+</arguments>
+<assign>
+<var>${time}</var>
+</assign>
+<msg timestamp="20180704 13:39:09.472" level="INFO">${time} = 04-07-2018 13:39</msg>
+<status status="PASS" endtime="20180704 13:39:09.472" starttime="20180704 13:39:09.472"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180704 13:39:09.473" level="INFO">${time} = 04-07-2018 13:39</msg>
+<status status="PASS" endtime="20180704 13:39:09.473" starttime="20180704 13:39:09.472"></status>
+</kw>
+<status status="PASS" endtime="20180704 13:39:09.473" starttime="20180704 13:39:09.468"></status>
+</kw>
+<kw name="Wait Until File Processed">
+<kw name="Wait For Condition" library="Selenium2Library">
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<arguments>
+<arg>return document.getElementById("upload-loader").style.display == "none"</arg>
+<arg>timeout=30s</arg>
+</arguments>
+<status status="PASS" endtime="20180704 13:39:22.311" starttime="20180704 13:39:09.475"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by ``locator``.</doc>
+<arguments>
+<arg>xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a</arg>
+</arguments>
+<msg timestamp="20180704 13:39:22.312" level="INFO">Clicking element 'xpath:/html/body/div[2]/div/div/div[1]/div/ul/li[3]/a'.</msg>
+<status status="PASS" endtime="20180704 13:39:22.523" starttime="20180704 13:39:22.312"></status>
+</kw>
+<kw name="Page Should Contain" library="Selenium2Library">
+<doc>Verifies that current page contains ``text``.</doc>
+<arguments>
+<arg>${time}</arg>
+</arguments>
+<msg timestamp="20180704 13:39:22.541" level="INFO">Current page contains text '04-07-2018 13:39'.</msg>
+<status status="PASS" endtime="20180704 13:39:22.541" starttime="20180704 13:39:22.523"></status>
+</kw>
+<status status="PASS" endtime="20180704 13:39:22.542" starttime="20180704 13:39:09.474"></status>
+</kw>
+<status status="PASS" endtime="20180704 13:39:22.542" critical="yes" starttime="20180704 13:39:09.467"></status>
+</test>
+<test id="s1-t3" name="SPLY-03">
+<kw name="Get Columns Data">
+<kw name="Get Column Names" library="fileParser">
+<doc>Creates a keyword named "Get Column Names"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${columns}</var>
+</assign>
+<msg timestamp="20180704 13:39:22.669" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180704 13:39:22.669" starttime="20180704 13:39:22.543"></status>
+</kw>
+<kw name="Get List Of Items" library="fileParser">
+<doc>Creates a keyword named "Get List of Items"</doc>
+<arguments>
+<arg>${filename}</arg>
+</arguments>
+<assign>
+<var>${items}</var>
+</assign>
+<msg timestamp="20180704 13:39:22.692" level="INFO">${items} = [[u'SOME00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180704 13:39:22.692" starttime="20180704 13:39:22.669"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${columns}</arg>
+</arguments>
+<msg timestamp="20180704 13:39:22.693" level="INFO">${columns} = [u'SKU', u'Name', u'Specification', u'UOM', u'Full/part', u'Handling list', u'Inner length (mm)', u'Inner width (mm)', u'Inner height (mm)', u'Inner weight (gr)', u'Inner category', u'Outer length (mm...</msg>
+<status status="PASS" endtime="20180704 13:39:22.693" starttime="20180704 13:39:22.692"></status>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<arguments>
+<arg>${items}</arg>
+</arguments>
+<msg timestamp="20180704 13:39:22.694" level="INFO">${items} = [[u'SOME00001', u'Alcor Deep Fry Wok', u'Diameter: 16cm \nWarna Sesuai Stock yang tersedia', u'pcs', u'Full', u'Tidak boleh dibanting', 300, 170, 120, 400, u'S', 300, 170, 120, 400, u'S', 320, 190, 13...</msg>
+<status status="PASS" endtime="20180704 13:39:22.694" starttime="20180704 13:39:22.693"></status>
+</kw>
+<status status="PASS" endtime="20180704 13:39:22.694" starttime="20180704 13:39:22.543"></status>
+</kw>
+<kw name="Match Details With Kafka">
+<kw name="Match Kafka Item Details" library="kafkaMessage">
+<doc>Creates a keyword named "Match Item Details"</doc>
+<arguments>
+<arg>${items}</arg>
+<arg>SkuCreateRequested</arg>
+<arg>10.99.143.96:9092</arg>
+</arguments>
+<assign>
+<var>${kafka_status}</var>
+</assign>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.244" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.245" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.245" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.756" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.757" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.757" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.270" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.271" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.271" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.271" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.271" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.803" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.805" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.806" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.806" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.806" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.345" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.347" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.348" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.348" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.348" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.348" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.348" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.885" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.887" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.888" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.457" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.457" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.457" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.457" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.457" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.988" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.990" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.991" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.991" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.660" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.660" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.661" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.662" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.206" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.206" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.206" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.206" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.206" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.206" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.206" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.208" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.209" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.209" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.209" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.209" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.209" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.822" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.822" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.822" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.822" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.824" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.516" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.516" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.516" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.516" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.516" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.516" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.518" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.025" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.026" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.026" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.026" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.026" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.027" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.028" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.541" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.542" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.542" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.542" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.542" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.542" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.542" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.542" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.543" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.544" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.544" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.544" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.547" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.548" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.549" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.550" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.550" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.059" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.059" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.059" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.061" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.583" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.583" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.583" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.585" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.092" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.092" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.092" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.092" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.092" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.092" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.093" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.093" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.093" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.093" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.093" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.093" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.098" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.098" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.098" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.099" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.100" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.101" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.632" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.632" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.634" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.634" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.634" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.634" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.634" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.634" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.163" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.163" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.163" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.163" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.163" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.163" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.166" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.167" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.167" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.167" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.167" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.726" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.726" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.728" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.729" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.729" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.729" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.245" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.245" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.245" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.245" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.245" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.245" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.246" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.247" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.247" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.247" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.247" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.247" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.247" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.251" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.251" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.251" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.252" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.815" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.817" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.817" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.817" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.817" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.319" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.319" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.319" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.319" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.320" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.320" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.320" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.320" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.320" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.320" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.320" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.321" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.322" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.325" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.325" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.326" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.327" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.328" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.871" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.872" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.872" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.872" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.918" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.919" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.919" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.919" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.778" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.779" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.779" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.779" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: Alcor Deep Fry Wok exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: Diameter: 16cm 
+Warna Sesuai Stock yang tersedia exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: pcs exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: Tidak boleh dibanting exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 300 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 170 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 120 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 400 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 320 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 190 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 130 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: 410 exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="INFO">SOME00001: S exists in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<status status="FAIL" endtime="20180704 13:39:39.326" starttime="20180704 13:39:22.695"></status>
+</kw>
+<status status="FAIL" endtime="20180704 13:39:39.326" starttime="20180704 13:39:22.695"></status>
+</kw>
+<status status="FAIL" endtime="20180704 13:39:39.327" critical="yes" starttime="20180704 13:39:22.542">Execution terminated by signal</status>
+</test>
+<status status="FAIL" endtime="20180704 13:39:39.329" starttime="20180704 13:39:00.787"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="2">Critical Tests</stat>
+<stat fail="1" pass="2">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Testcase" pass="2">Testcase</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20180704 13:39:23.245" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.246" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.757" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:23.758" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.271" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.272" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.804" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:24.806" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.346" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:25.348" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.886" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:26.888" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.458" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.460" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.989" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:27.991" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.662" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:28.663" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.207" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.209" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.823" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:29.825" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.517" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:30.519" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.026" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.028" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.544" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:31.550" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.060" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.062" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.584" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:32.586" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.094" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.101" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.633" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:33.635" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.164" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.167" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.727" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:34.729" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.247" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.253" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.816" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:35.818" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.322" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.328" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.872" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:36.873" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.919" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:37.920" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.779" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+<msg timestamp="20180704 13:39:38.780" level="ERROR">Some item details currently not present in Kafka Broker. does not exist in Kafka Topic</msg>
+</errors>
+</robot>
