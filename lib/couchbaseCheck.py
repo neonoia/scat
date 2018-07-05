@@ -88,7 +88,7 @@ def match_couchbase_item_details(items, column_names, host, username, password, 
 
                     # Query with its primary key
                     q += " AND " + str(key_name) + "='" + str(check) + "'"
-
+                    
             query = N1QLQuery(q)
             for row in cb.n1ql_query(query):
                 results.append(row)
@@ -97,10 +97,12 @@ def match_couchbase_item_details(items, column_names, host, username, password, 
             if (len(results) > 0):
                 found = True
                 success(temp_msg)
+            else:
+                q = ""
 
             if time.time() > timeout:
                 # error message
-                fail(item)
+                fail(temp_msg)
                 break
                 
     return True
